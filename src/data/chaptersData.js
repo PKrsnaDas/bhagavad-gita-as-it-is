@@ -21,7 +21,7 @@ export const chaptersData = [
         title: "D - Dilemma",
         content: "Arjuna faces a profound moral dilemma - fighting his own kinsmen. As Prabhupada explains, this represents the soul's struggle in material existence, caught between attachment and duty.",
         subsections: [
-          "The conflict between family attachment and duty",
+          "Verses 1-11: The conflict between family attachment and duty",
           "Material affection as a bondage",
           "The illusion of bodily relationships"
         ]
@@ -30,7 +30,7 @@ export const chaptersData = [
         title: "H - Hesitation",
         content: "Arjuna hesitates to perform his duty as a kshatriya. This hesitation arises from false identification with the material body and relationships.",
         subsections: [
-          "Paralysis due to material attachment",
+          "Verses 12-30: Paralysis due to material attachment",
           "Forgetting one's actual duty",
           "The weakness of the material mind"
         ]
@@ -39,7 +39,7 @@ export const chaptersData = [
         title: "A - Attachment",
         content: "Arjuna's attachment to family members demonstrates how material affection binds the soul. Prabhupada explains this as the root cause of repeated birth and death.",
         subsections: [
-          "Family attachment as material bondage",
+          "Verses 31-46: Family attachment as material bondage",
           "The illusion of bodily relationships",
           "Attachment leads to suffering"
         ]
@@ -48,18 +48,18 @@ export const chaptersData = [
         title: "R - Realization",
         content: "Arjuna begins to realize that material victory is meaningless if it means destroying one's own family. This is the first step toward spiritual inquiry.",
         subsections: [
-          "Recognizing the futility of material gains",
+          "Verses 47: Recognizing the futility of material gains",
           "The beginning of spiritual questioning",
           "Material success vs spiritual life"
         ]
       },
       {
         title: "M - Master",
-        content: "Arjuna surrenders to Krishna as his spiritual master, accepting His guidance. Prabhupada emphasizes the necessity of accepting a bona fide spiritual master.",
+        content: "Krishna accepts Arjuna as His disciple and begins imparting transcendental knowledge. This establishes the guru-disciple relationship.",
         subsections: [
-          "Surrender to the spiritual master",
-          "The importance of divine guidance",
-          "Krishna as the supreme spiritual master"
+          "Krishna as spiritual master",
+          "Disciple's submission",
+          "Transmission of knowledge"
         ]
       },
       {
@@ -156,7 +156,7 @@ export const chaptersData = [
         title: "K - Knowledge in Action",
         content: "Krishna teaches that knowledge must be applied in action. As Prabhupada explains, theoretical knowledge without practical application is useless.",
         subsections: [
-          "Knowledge must be applied in daily life",
+          "Verses 1-8: Knowledge must be applied in daily life",
           "The connection between knowledge and action",
           "Practical spirituality"
         ]
@@ -165,7 +165,7 @@ export const chaptersData = [
         title: "A - Action is Inevitable",
         content: "No one can cease from work even for a moment. The material nature forces everyone to act according to their qualities.",
         subsections: [
-          "The inevitability of work",
+          "Verses 9-16: The inevitability of work",
           "Material nature's influence",
           "Forced action vs voluntary action"
         ]
@@ -174,7 +174,7 @@ export const chaptersData = [
         title: "R - Renunciation of Fruits",
         content: "One must renounce the fruits of action, not the action itself. Work should be performed as a sacrifice to Krishna.",
         subsections: [
-          "Renouncing attachment to results",
+          "Verses 17-24: Renouncing attachment to results",
           "Work as yajna (sacrifice)",
           "Offering everything to Krishna"
         ]
@@ -183,7 +183,7 @@ export const chaptersData = [
         title: "M - Material vs Spiritual",
         content: "The distinction between material work and spiritual work. When work is done for Krishna, it becomes spiritual.",
         subsections: [
-          "Transforming material work into spiritual",
+          "Verses 25-35: Transforming material work into spiritual",
           "Krishna consciousness in all activities",
           "The yoga of work"
         ]
@@ -192,7 +192,7 @@ export const chaptersData = [
         title: "A - Acting for Krishna",
         content: "The ultimate instruction - act for Krishna's satisfaction. This is the essence of Karma Yoga.",
         subsections: [
-          "Working for Krishna's pleasure",
+          "Verses 36-43: Working for Krishna's pleasure",
           "The highest perfection of work",
           "Bhakti through action"
         ]
@@ -222,7 +222,7 @@ export const chaptersData = [
         title: "T - Transcendental Knowledge",
         content: "Krishna imparts transcendental knowledge that destroys all sins. As Prabhupada explains, this knowledge is received through the disciplic succession.",
         subsections: [
-          "Knowledge that destroys sins",
+          "Verses 1-3: Knowledge that destroys sins",
           "The disciplic succession",
           "Receiving knowledge from authority"
         ]
@@ -231,7 +231,7 @@ export const chaptersData = [
         title: "R - Revelation of Divinity",
         content: "Krishna reveals His divine appearance and disappearance. He appears to reestablish religious principles and protect the devotees.",
         subsections: [
-          "Krishna's periodic appearances",
+          "Verses 4-10: Krishna's periodic appearances",
           "Protection of the devotees",
           "Annihilation of the demons"
         ]
@@ -240,7 +240,7 @@ export const chaptersData = [
         title: "A - Ancient Sacrifices",
         content: "Krishna explains the ancient system of sacrifice performed by the devotees. Prabhupada emphasizes the importance of performing sacrifice for Vishnu.",
         subsections: [
-          "The beginning of sacrifice",
+          "Verses 11-15: The beginning of sacrifice",
           "Sacrifice for Vishnu's satisfaction",
           "The purpose of Vedic rituals"
         ]
@@ -249,7 +249,7 @@ export const chaptersData = [
         title: "N - Nature of Action",
         content: "The relationship between action, inaction, and forbidden action is explained. One who sees inaction in action is wise.",
         subsections: [
-          "Action vs inaction vs forbidden action",
+          "Verses 16-24: Action vs inaction vs forbidden action",
           "The vision of the wise",
           "Transcending material action"
         ]
@@ -258,7 +258,7 @@ export const chaptersData = [
         title: "S - Sacrifice in Knowledge",
         content: "The ultimate sacrifice is offering everything in knowledge. This is the perfection of yoga.",
         subsections: [
-          "Sacrifice through knowledge",
+          "Verses 25-32: Sacrifice through knowledge",
           "The fire of knowledge",
           "Burning all karma"
         ]
@@ -288,7 +288,7 @@ export const chaptersData = [
         title: "R - Real Renunciation",
         content: "True renunciation is giving up attachment to the fruits of action, not the action itself. As Prabhupada explains, this is internal renunciation.",
         subsections: [
-          "Internal vs external renunciation",
+          "Verses 1-6: Internal vs external renunciation",
           "Renouncing attachment, not action",
           "The essence of sanyasa"
         ]
@@ -297,7 +297,7 @@ export const chaptersData = [
         title: "E - External Appearance",
         content: "Mere external renunciation is insufficient. One may dress like a renunciant but still be attached internally.",
         subsections: [
-          "The illusion of external renunciation",
+          "Verses 7-12: The illusion of external renunciation",
           "Internal purification required",
           "Beyond external symbols"
         ]
@@ -306,7 +306,7 @@ export const chaptersData = [
         title: "N - Natural Duties",
         content: "Everyone must perform their natural duties according to their position. Abandoning prescribed duties is not true renunciation.",
         subsections: [
-          "Performing one's prescribed duties",
+          "Verses 13-18: Performing one's prescribed duties",
           "Duty according to one's nature",
           "The importance of varnashrama"
         ]
@@ -315,7 +315,7 @@ export const chaptersData = [
         title: "O - Offering Results",
         content: "The results of all work should be offered to Krishna. This is the highest form of renunciation.",
         subsections: [
-          "Offering everything to Krishna",
+          "Verses 19-23: Offering everything to Krishna",
           "Work as sacrifice",
           "The ultimate renunciation"
         ]
@@ -324,7 +324,7 @@ export const chaptersData = [
         title: "U - Understanding the Self",
         content: "The five senses and the mind are engaged in their functions. The self is beyond these material activities.",
         subsections: [
-          "The five senses and mind",
+          "Verses 24-29: The five senses and mind",
           "The self beyond material nature",
           "Understanding one's true position"
         ]
@@ -381,7 +381,7 @@ export const chaptersData = [
         title: "M - Mind Control",
         content: "The mind is the friend of the conditioned soul who has controlled it, but it is the enemy of one who has failed to control it. As Prabhupada explains, controlling the mind is the essence of yoga.",
         subsections: [
-          "Mind as friend or enemy",
+          "Verses 1-6: Mind as friend or enemy",
           "The struggle to control the mind",
           "Practice and detachment"
         ]
@@ -390,7 +390,7 @@ export const chaptersData = [
         title: "E - Environment",
         content: "Krishna describes the ideal place for meditation - a sacred, clean place in a secluded location. The environment supports spiritual practice.",
         subsections: [
-          "Sacred and clean place",
+          "Verses 7-12: Sacred and clean place",
           "Secluded location",
           "Free from disturbances"
         ]
@@ -399,7 +399,7 @@ export const chaptersData = [
         title: "D - Discipline",
         content: "The yogi must be disciplined in eating, sleeping, and working. Moderation is key for successful meditation.",
         subsections: [
-          "Moderation in eating",
+          "Verses 13-18: Moderation in eating",
           "Moderation in sleeping",
           "Moderation in work and recreation"
         ]
@@ -408,49 +408,49 @@ export const chaptersData = [
         title: "I - Internal Focus",
         content: "The mind must be fixed on the Self (Krishna) within the heart. As Prabhupada emphasizes, meditation on the impersonal is incomplete.",
         subsections: [
-          "Fixing the mind on Krishna",
+          "Verses 19-23: Fixing the mind on Krishna",
           "Krishna within the heart",
           "Personal meditation vs impersonal"
         ]
       },
       {
-        title: "T - Transcendental Position",
-        content: "The yogi achieves a transcendental position, seeing Krishna everywhere. This is the perfection of meditation.",
+        title: "T - Tranquility",
+        content: "The yogi becomes tranquil by controlling the mind and senses. This tranquility is the foundation for spiritual advancement.",
         subsections: [
-          "Transcendental vision",
-          "Seeing Krishna everywhere",
-          "The highest perfection"
+          "Verses 24-28: Achieving tranquility",
+          "Freedom from material disturbances",
+          "Peace of mind"
         ]
       },
       {
-        title: "A - Always Steadfast",
-        content: "The yogi must be always steadfast in determination, with mind controlled and senses conquered.",
+        title: "A - Awareness",
+        content: "The yogi is always aware of Krishna everywhere. This constant awareness is the perfection of meditation.",
         subsections: [
-          "Steadfast determination",
-          "Conquering the senses",
-          "Unwavering practice"
+          "Verses 29-34: Seeing Krishna everywhere",
+          "Constant awareness",
+          "Krishna consciousness"
         ]
       },
       {
-        title: "T - Transcending Material Nature",
-        content: "Through meditation, one transcends the modes of material nature and attains the spiritual platform.",
+        title: "T - Transformation",
+        content: "Through meditation, the yogi is transformed from material consciousness to spiritual consciousness.",
         subsections: [
-          "Transcending the three gunas",
-          "Spiritual platform",
-          "Freedom from material contamination"
+          "Verses 35-41: Transformation of consciousness",
+          "Purification",
+          "Elevation to transcendence"
         ]
       },
       {
-        title: "E - Eternal Peace",
-        content: "The yogi who meditates on Krishna achieves eternal peace and liberation from material existence.",
+        title: "E - Enlightenment",
+        content: "The ultimate goal is enlightenment - seeing Krishna everywhere and becoming fully Krishna conscious.",
         subsections: [
-          "Eternal peace in Krishna",
-          "Liberation from birth and death",
-          "The ultimate destination"
+          "Verses 42-47: The perfection of yoga",
+          "Full Krishna consciousness",
+          "Eternal peace"
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1506626113408-eca07ce68773?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=400&fit=crop"
   },
   {
     id: 7,
