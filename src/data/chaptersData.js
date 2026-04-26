@@ -71,7 +71,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?w=800&h=400&fit=crop"
   },
   {
     id: 2,
@@ -127,7 +127,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-106e70b71b949-1e87b487bc2ac2a?w=800&h=400&fit=crop"
   },
   {
     id: 3,
@@ -357,7 +357,7 @@ export const chaptersData = [
     sanskrit: "ध्यानयोग",
     english: "Dhyāna-yoga",
     verses: 47,
-    summary: "Krishna explains the process of meditation (dhyana) for controlling the mind and senses. He describes the ideal environment, posture, and focus for meditation. Prabhupada emphasizes that the ultimate object of meditation must be Krishna, not an impersonal void.",
+    summary: "Krishna explains the process of meditation (dhyana) for controlling the mind and senses.",
     keyTeachings: [
       "The mind must be controlled through practice and detachment",
       "One should meditate on Krishna within the heart",
@@ -931,7 +931,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1544531766-4444a8f9f86d?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=400&fit=crop"
   },
   {
     id: 13,
@@ -939,7 +939,7 @@ export const chaptersData = [
     sanskrit: "क्षेत्रक्षेत्रज्ञविभागयोग",
     english: "Nature, the Enjoyer and Consciousness",
     verses: 35,
-    summary: "Krishna explains the distinction between the field (kshetra - the body) and the knower of the field (kshetrajna - the soul). He describes the qualities of knowledge and the process of liberation. Prabhupada explains this as analytical study of the material and spiritual worlds.",
+    summary: "Krishna explains the distinction between the field (kshetra - the body) and the knower of the field (kshetrajna - the soul).",
     keyTeachings: [
       "The body is the field of activity for the soul",
       "The soul is the knower of the field",
@@ -948,51 +948,60 @@ export const chaptersData = [
     ],
     theme: "Nature and Spirit",
     acronym: "F.I.E.L.D",
-    acronymMeaning: "Field, Intelligence, Enlightenment, Liberation, Distinction",
+    acronymMeaning: "Field, Inquiry, End-goal, Living Entity, Deliverance",
     acronymSections: [
       {
-        title: "F - Field of Activity",
-        content: "The body is the field (kshetra) where the soul experiences material existence. As Prabhupada explains, this includes the five elements, senses, mind, and ego.",
+        title: "F - Field & Knower (Kshetra & Kshetrajna)",
+        content: "Krishna explains the distinction between the field (kshetra - the body) and the knower of the field (kshetrajna - the soul). This is the foundation for understanding material and spiritual existence.",
         subsections: [
-          "The twenty-four material elements",
-          "Body as the field",
-          "Material nature's components"
+          "Verses 2-7: Kshetra (Field) and Kshetrajna (Knower of the Field)",
+          "The body as the field of activity",
+          "The soul as the knower of the field",
+          "Understanding the distinction between matter and spirit"
         ]
       },
       {
-        title: "I - Intelligence of the Knower",
-        content: "The soul (kshetrajna) is the knower of the field. The intelligence is the instrument to understand this distinction.",
+        title: "I - Inquiry (Jnana - Knowledge)",
+        content: "Krishna defines what constitutes knowledge. True knowledge is understanding the nature of the field, the knower, and the process of liberation.",
         subsections: [
-          "Soul as the knower",
-          "Intelligence as the tool",
-          "Understanding the distinction"
+          "Verses 8-12: What is Jnana (Knowledge)",
+          "Qualities of a person of knowledge",
+          "The process of acquiring knowledge",
+          "Humility as the foundation of knowledge"
         ]
       },
       {
-        title: "E - Elements of Knowledge",
-        content: "Krishna lists the twenty qualities of knowledge, beginning with humility and pridelessness.",
+        title: "E - End-goal of Knowledge (Jneyam)",
+        content: "The object of knowledge - what should be known. This includes understanding the material nature, the living entities, the Supreme Personality of Godhead, and the relationship between them.",
         subsections: [
-          "Twenty qualities of knowledge",
-          "Humility and pridelessness",
-          "The process of acquiring knowledge"
+          "Verses 13-19: Jneyam (Object of Knowledge)",
+          "The twenty-four elements of material nature",
+          "The living entities (Purusha)",
+          "The Supreme Personality of Godhead (Purushottama)"
         ]
       },
       {
-        title: "L - Liberation through Knowledge",
-        content: "One who understands the distinction between the field and the knower achieves liberation from material existence.",
+        title: "L - Living Entity & Nature (Purusha + Prakriti)",
+        content: "The relationship between the living entity (Purusha) and material nature (Prakriti). Understanding this leads to liberation.",
         subsections: [
-          "Liberation through knowledge",
-          "Transcending material nature",
-          "The goal of study"
+          "Verses 20-34: Purusha and Prakriti",
+          "Verses 20, 21: Roles of Purusha and Prakriti",
+          "Verse 22: Entanglement of Soul",
+          "Verse 23: Real Purusha (Supersoul)",
+          "Verse 24: Benefit of Knowing Purusha and Prakriti",
+          "Verses 25, 26: Ways to Know Supersoul (Karma Yoga, Jnana Yoga, Ashtanga Yoga, By Hearing)",
+          "Verses 27-33: Effect of Knowing Supersoul - Liberation",
+          "Verse 34: Purusha (Soul)"
         ]
       },
       {
-        title: "D - Distinction between Purusha and Prakriti",
-        content: "The fundamental distinction between the enjoyer (purusha) and material nature (prakriti).",
+        title: "D - Deliverance (Benefit)",
+        content: "The ultimate benefit of understanding the distinction between the field, the knower, and the relationship between Purusha and Prakriti is liberation from material existence.",
         subsections: [
-          "Purusha vs Prakriti",
-          "The enjoyer and the enjoyed",
-          "Spirit and matter"
+          "Verse 35: The Ultimate Benefit",
+          "Liberation from material conditioning",
+          "Achieving spiritual consciousness",
+          "The goal of studying Bhagavad Gita"
         ]
       }
     ],
@@ -1310,7 +1319,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1544531766-4444a8f9f86d?w=800&h=400&fit=crop"
   },
   {
     id: 18,
