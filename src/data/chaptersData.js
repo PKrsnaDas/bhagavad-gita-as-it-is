@@ -72,7 +72,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1608176649494-87a6f3c44622?w=800&h=400&fit=crop"
+    imageUrl: "/images/Chapter1.png"
   },
   {
     id: 2,
