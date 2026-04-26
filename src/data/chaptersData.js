@@ -5,6 +5,7 @@ export const chaptersData = [
     sanskrit: "अर्जुनविषादयोग",
     english: "Observing the Armies on the Battlefield of Kurukṣetra",
     verses: 47,
+    connectionWithPreviousChapter: null,
     summary: "Arjuna becomes overwhelmed with grief upon seeing his relatives arrayed against him on the battlefield of Kurukshetra. He experiences a crisis of conscience and refuses to fight, setting the stage for Lord Krishna's divine teachings. As Prabhupada explains, this chapter establishes the necessity of divine guidance when faced with moral dilemmas.",
     keyTeachings: [
       "The battlefield of Kurukshetra as the field of dharma",
@@ -79,6 +80,7 @@ export const chaptersData = [
     sanskrit: "सांख्ययोग",
     english: "Contents of the Gītā Summarized",
     verses: 72,
+    connectionWithPreviousChapter: "Builds upon Chapter 1 where Arjuna surrendered to Krishna as his spiritual master. Krishna now begins His teachings by explaining the eternal nature of the soul versus the temporary body.",
     summary: "Krishna begins His teachings by explaining the difference between the material body and the eternal soul. He introduces the Sankhya philosophy - analytical study of the soul and matter. Prabhupada explains this chapter as the foundation of transcendental knowledge, establishing that the soul is eternal while the body is temporary.",
     keyTeachings: [
       "The soul is eternal and the body is temporary",
@@ -204,6 +206,7 @@ export const chaptersData = [
     sanskrit: "ज्ञानकर्मसंन्यासयोग",
     english: "Transcendental Knowledge",
     verses: 42,
+    connectionWithPreviousChapter: "Expands on Chapter 3's Karma Yoga by explaining the divine origin of these teachings and how Krishna Himself appears millennium after millennium to deliver this knowledge.",
     summary: "Krishna explains that He appears in this world millennium after millennium to deliver the pious and annihilate the miscreants. He teaches about the ancient sacrificial system and how action, knowledge, and renunciation are related. Prabhupada explains that this chapter establishes the divine origin of the Gita's teachings.",
     keyTeachings: [
       "Krishna appears millennium after millennium",
@@ -269,6 +272,7 @@ export const chaptersData = [
     sanskrit: "कर्मसंन्यासयोग",
     english: "Karma-yoga – Action in Kṛṣṇa Consciousness",
     verses: 29,
+    connectionWithPreviousChapter: "Clarifies the relationship between the knowledge from Chapter 4 and action from Chapter 3, showing that true renunciation is internal - performing duties without attachment to results.",
     summary: "Krishna explains true renunciation (sanyasa) - performing one's duties without attachment to the results. He contrasts the paths of action and renunciation, showing that both can lead to liberation when performed correctly. Prabhupada emphasizes that true renunciation is internal, not external.",
     keyTeachings: [
       "One who renounces the fruits of action is a true sanyasi",
@@ -361,6 +365,7 @@ export const chaptersData = [
     sanskrit: "ध्यानयोग",
     english: "Dhyāna-yoga",
     verses: 47,
+    connectionWithPreviousChapter: "Describes the practical application of the renunciation explained in Chapter 5 - the process of meditation (dhyana) to control the mind and senses and focus on Krishna.",
     summary: "Krishna explains the process of meditation (dhyana) for controlling the mind and senses.",
     keyTeachings: [
       "The mind must be controlled through practice and detachment",
@@ -452,8 +457,9 @@ export const chaptersData = [
     name: "Gyan Vigyana Yoga",
     sanskrit: "ज्ञानविज्ञानयोग",
     english: "Knowledge of the Absolute",
-    verses: 30,
-    summary: "Krishna reveals His divine nature and explains how only those who surrender to Him with devotion can truly know Him. He describes the four types of devotees who approach Him. Prabhupada explains this chapter as establishing the supremacy of bhakti (devotion) over other paths.",
+    verses: 28,
+    connectionWithPreviousChapter: "Demonstrates Krishna's opulence described in Chapter 7 by revealing His universal form to Arjuna, showing that He is the source of all worlds.",
+    summary: "Krishna reveals His universal form (virata-rupa) to Arjuna, showing His unlimited opulence and power as the Supreme Personality of Godhead. Devotion can truly know Him. He describes the four types of devotees who approach Him. Prabhupada explains this chapter as establishing the supremacy of bhakti (devotion) over other paths.",
     keyTeachings: [
       "Krishna's energies - material and spiritual",
       "The four types of devotees who approach Krishna",
@@ -537,6 +543,7 @@ export const chaptersData = [
     sanskrit: "अक्षरब्रह्मयोग",
     english: "Attaining the Supreme",
     verses: 28,
+    connectionWithPreviousChapter: "Builds on Chapter 7's description of Krishna's opulence by explaining how to attain the Supreme Personality of Godhead by remembering Him at the time of death.",
     summary: "Krishna explains how to attain the Supreme by remembering Him at the time of death. He describes the paths of light and darkness that souls take after death. Prabhupada emphasizes the importance of constant Krishna consciousness throughout life.",
     keyTeachings: [
       "Remembering Krishna at the time of death ensures return to Him",
@@ -611,6 +618,7 @@ export const chaptersData = [
     sanskrit: "राजविद्याराजगुह्ययोग",
     english: "The Most Confidential Knowledge",
     verses: 34,
+    connectionWithPreviousChapter: "Reveals the most confidential knowledge - pure devotional service, expanding on the remembrance at death from Chapter 8 by explaining constant remembrance throughout life.",
     summary: "Krishna reveals the most confidential knowledge - pure devotional service (bhakti-yoga). He explains that everything rests upon Him and the benefits of constant remembrance. Prabhupada emphasizes this as the king of knowledge and the king of secrets.",
     keyTeachings: [
       "Pure devotional service is the most confidential knowledge",
@@ -685,6 +693,7 @@ export const chaptersData = [
     sanskrit: "विभूतियोग",
     english: "The Opulence of the Absolute",
     verses: 42,
+    connectionWithPreviousChapter: "Demonstrates the opulence of Krishna described in Chapter 9 by listing His specific manifestations throughout the universe.",
     summary: "Krishna describes His divine opulences (vibhuti) throughout the universe. He shows that everything glorious, beautiful, or powerful is a spark of His splendor. Prabhupada explains this chapter as helping the devotee recognize Krishna's presence everywhere.",
     keyTeachings: [
       "All opulences belong to Krishna",
@@ -777,6 +786,7 @@ export const chaptersData = [
     sanskrit: "विश्वरूपदर्शनयोग",
     english: "The Universal Form",
     verses: 55,
+    connectionWithPreviousChapter: "After listing His opulences in Chapter 10, Krishna now reveals His universal form, showing that all those opulences are contained within Him.",
     summary: "Krishna grants Arjuna divine vision to see His universal form (Vishwarupa) - a magnificent display of all universes, time, and beings. Arjuna is overwhelmed with awe and fear. Prabhupada explains this as the climax of Krishna's revelation of His opulence.",
     keyTeachings: [
       "Krishna's universal form contains all universes",
@@ -869,6 +879,7 @@ export const chaptersData = [
     sanskrit: "भक्तियोग",
     english: "Devotional Service",
     verses: 20,
+    connectionWithPreviousChapter: "Following the vision of the universal form in Chapter 11, Krishna explains that personal devotional service is the best way to approach Him.",
     summary: "Krishna explains that personal devotional service (bhakti-yoga) is superior to impersonal worship. He describes the qualities of an ideal devotee. Prabhupada emphasizes that Krishna is most easily approached through personal devotion.",
     keyTeachings: [
       "Personal worship is superior to impersonal",
@@ -943,6 +954,7 @@ export const chaptersData = [
     sanskrit: "क्षेत्रक्षेत्रज्ञविभागयोग",
     english: "Nature, the Enjoyer and Consciousness",
     verses: 35,
+    connectionWithPreviousChapter: "Following the vision of the universal form in Chapter 11, Krishna explains the distinction between the field (body) and the knower (soul) to help Arjuna understand His actual nature.",
     summary: "Krishna explains the distinction between the field (kshetra - the body) and the knower of the field (kshetrajna - the soul).",
     keyTeachings: [
       "The body is the field of activity for the soul",
@@ -1017,6 +1029,7 @@ export const chaptersData = [
     sanskrit: "गुणत्रयविभागयोग",
     english: "The Three Modes of Material Nature",
     verses: 27,
+    connectionWithPreviousChapter: "Expands on the field and knower distinction from Chapter 13 by explaining the three modes of material nature that condition the living entities.",
     summary: "Krishna elaborates on the three modes of material nature (gunas): Sattva (goodness), Rajas (passion), and Tamas (ignorance). He explains how they influence behavior and liberation. Prabhupada emphasizes that everyone is conditioned by these modes and must transcend them.",
     keyTeachings: [
       "The three modes condition all living entities",
@@ -1082,6 +1095,7 @@ export const chaptersData = [
     sanskrit: "पुरुषोत्तमयोग",
     english: "The Yoga of the Supreme Person",
     verses: 20,
+    connectionWithPreviousChapter: "After explaining the three modes in Chapter 14, Krishna describes the Supreme Person (Purushottama) who is beyond these modes.",
     summary: "Krishna reveals Himself as the Supreme Person (Purushottama) - beyond both the perishable material world and the imperishable souls. He explains the nature of the soul and the material world. Prabhupada explains this as establishing Krishna's supreme position.",
     keyTeachings: [
       "Krishna is the Supreme Person beyond all",
@@ -1192,6 +1206,7 @@ export const chaptersData = [
     sanskrit: "दैवासुरसम्पद्विभागयोग",
     english: "The Divine and Demoniac Natures",
     verses: 24,
+    connectionWithPreviousChapter: "After explaining the Supreme Person in Chapter 15, Krishna now describes the divine tree of the material world and how to cut it down.",
     summary: "Krishna contrasts divine qualities with demonic qualities. He describes the characteristics of those who possess divine nature versus those with demonic tendencies. Prabhupada explains that one should cultivate divine qualities and avoid the demonic nature.",
     keyTeachings: [
       "Divine qualities lead to liberation",
@@ -1266,6 +1281,7 @@ export const chaptersData = [
     sanskrit: "श्रद्धात्रयविभागयोग",
     english: "The Divisions of Faith",
     verses: 28,
+    connectionWithPreviousChapter: "Following the distinction between divine and demoniac natures in Chapter 16, Krishna explains the three types of faith based on these natures.",
     summary: "Krishna explains three types of faith based on the three modes of material nature. He describes how food, sacrifice, austerity, and charity can be categorized according to these modes. Prabhupada emphasizes that one should cultivate sattvic faith in Krishna.",
     keyTeachings: [
       "Faith is of three types according to the modes",
@@ -1331,6 +1347,7 @@ export const chaptersData = [
     sanskrit: "मोक्षसंन्यासयोग",
     english: "Conclusion – The Perfection of Renunciation",
     verses: 78,
+    connectionWithPreviousChapter: "The concluding chapter summarizes the entire Gita, bringing together all the teachings from the previous chapters and urging complete surrender to Krishna.",
     summary: "The concluding chapter summarizes the entire Gita. Krishna explains renunciation of the fruits of action, the four varnas, and ultimately urges Arjuna to surrender completely to Him for liberation. Prabhupada explains this as the perfection of life - complete surrender to Krishna.",
     keyTeachings: [
       "Renounce the fruits of action, not action itself",

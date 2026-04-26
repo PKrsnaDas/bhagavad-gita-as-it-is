@@ -86,6 +86,18 @@ const ChapterDetail = ({ chapter, onBack }) => {
               </div>
             </div>
 
+            {/* Connection with Previous Chapter */}
+            {chapter.connectionWithPreviousChapter && (
+              <div className="mb-8 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+                <h2 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">
+                  Connection with Previous Chapter
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300">
+                  {chapter.connectionWithPreviousChapter}
+                </p>
+              </div>
+            )}
+
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
                 Summary
