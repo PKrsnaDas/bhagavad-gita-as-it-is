@@ -474,7 +474,7 @@ export const chaptersData = [
         title: "D - Divine Energies",
         content: "Krishna explains His two energies - the material energy (apara) and the spiritual energy (para). Everything is His energy.",
         subsections: [
-          "Material and spiritual energies",
+          "Verses 1-7: Material and spiritual energies",
           "Everything belongs to Krishna",
           "The source of all existence"
         ]
@@ -483,7 +483,7 @@ export const chaptersData = [
         title: "E - Energy of Krishna",
         content: "The entire material world is Krishna's external energy, while the living entities are His internal energy. As Prabhupada explains, understanding this is key to spiritual knowledge.",
         subsections: [
-          "External material energy",
+          "Verses 8-12: External material energy",
           "Internal spiritual energy",
           "Living entities as Krishna's energy"
         ]
@@ -492,7 +492,7 @@ export const chaptersData = [
         title: "V - Vision of the Devotee",
         content: "The devotee sees Krishna everywhere, understanding that everything is Krishna's energy. This is the divine vision.",
         subsections: [
-          "Seeing Krishna everywhere",
+          "Verses 13-19: Seeing Krishna everywhere",
           "Understanding Krishna's energies",
           "Transcendental perception"
         ]
@@ -501,7 +501,7 @@ export const chaptersData = [
         title: "O - One who Knows",
         content: "Only those who know Krishna as He is can actually understand Him. This knowledge comes through devotion, not mere speculation.",
         subsections: [
-          "Knowing Krishna as He is",
+          "Verses 20-23: Knowing Krishna as He is",
           "Devotion as the means of knowledge",
           "Beyond mental speculation"
         ]
@@ -510,28 +510,28 @@ export const chaptersData = [
         title: "T - Four Types of Devotees",
         content: "Krishna describes four types of devotees: the distressed, the seeker of knowledge, the seeker of wealth, and the wise. The wise is best.",
         subsections: [
-          "The distressed devotee",
+          "Verses 24-28: The distressed devotee",
           "The seeker of knowledge",
           "The seeker of wealth",
           "The wise (jnani)"
         ]
       },
       {
-        title: "E - Engaged in Devotion",
-        content: "The pure devotee is constantly engaged in Krishna's service with unwavering devotion.",
-        subsections: [
-          "Constant devotional service",
-          "Unwavering devotion",
-          "The highest platform"
-        ]
-      },
-      {
         title: "E - Exclusive Devotion",
         content: "The pure devotee is exclusive to Krishna, not seeking any other benefit. This is the perfection of life.",
         subsections: [
-          "Exclusive devotion to Krishna",
+          "The pure devotee",
           "No other motive",
           "The highest perfection"
+        ]
+      },
+      {
+        title: "E - Eternal Peace",
+        content: "The yogi who meditates on Krishna achieves eternal peace and liberation from material existence.",
+        subsections: [
+          "Eternal peace in Krishna",
+          "Liberation from birth and death",
+          "The ultimate destination"
         ]
       }
     ],
@@ -559,7 +559,7 @@ export const chaptersData = [
         title: "A - Attainment of the Supreme",
         content: "One who remembers Krishna at the time of death attains His transcendental nature. As Prabhupada explains, this is the ultimate goal of life.",
         subsections: [
-          "Remembering Krishna at death",
+          "Verses 1-6: Remembering Krishna at death",
           "Attaining Krishna's nature",
           "The ultimate destination"
         ]
@@ -568,7 +568,7 @@ export const chaptersData = [
         title: "T - Time of Death",
         content: "The state of mind at the time of death determines the next destination. Therefore, one must practice Krishna consciousness throughout life.",
         subsections: [
-          "Final consciousness determines next life",
+          "Verses 7-13: Final consciousness determines next life",
           "The importance of practice",
           "Preparation for death"
         ]
@@ -577,7 +577,7 @@ export const chaptersData = [
         title: "T - Two Paths",
         content: "Krishna describes two paths - the path of light (returning to Krishna) and the path of darkness (returning to material world).",
         subsections: [
-          "The path of light (day)",
+          "Verses 14-21: The path of light (day)",
           "The path of darkness (night)",
           "Never return vs return to birth"
         ]
@@ -586,27 +586,27 @@ export const chaptersData = [
         title: "A - Always Remember",
         content: "One should always remember Krishna and never forget Him. This is the instruction of all scriptures.",
         subsections: [
-          "Constant remembrance of Krishna",
+          "Verses 22-28: Constant remembrance of Krishna",
           "The essence of all scriptures",
           "Yoga means remembering Krishna"
         ]
       },
       {
         title: "I - Intelligence",
-        content: "One should use intelligence to remain Krishna conscious at all times. This requires determination and practice.",
-        subsections: [
-          "Using intelligence for spiritual life",
-          "Determination in practice",
-          "Overcoming material distractions"
-        ]
-      },
-      {
-        title: "N - Nature of Time",
         content: "Krishna explains His control over time and how souls travel through time according to their consciousness.",
         subsections: [
           "Krishna's control over time",
           "The cycle of creation",
           "Transcending time"
+        ]
+      },
+      {
+        title: "N - Nature of Time",
+        content: "The material world is controlled by time, but Krishna is beyond time. Those who know this transcend material existence.",
+        subsections: [
+          "Time as a controller",
+          "Krishna beyond time",
+          "Transcending material time"
         ]
       }
     ],
@@ -634,7 +634,7 @@ export const chaptersData = [
         title: "B - Bhakti Yoga",
         content: "Pure devotional service (bhakti-yoga) is the king of all knowledge and the king of all secrets. As Prabhupada explains, this is the highest process.",
         subsections: [
-          "The king of knowledge",
+          "Verses 1-3: The king of knowledge",
           "The king of secrets",
           "The highest spiritual process"
         ]
@@ -643,7 +643,7 @@ export const chaptersData = [
         title: "H - Hearing and Chanting",
         content: "The process of bhakti begins with hearing and chanting about Krishna. This purifies the heart.",
         subsections: [
-          "Hearing about Krishna",
+          "Verses 4-14: Hearing about Krishna",
           "Chanting Krishna's names",
           "The purification process"
         ]
@@ -652,7 +652,7 @@ export const chaptersData = [
         title: "A - Always Remember",
         content: "One should always remember Krishna and never forget Him. This is the essence of yoga.",
         subsections: [
-          "Constant remembrance",
+          "Verses 15-22: Constant remembrance",
           "Never forgetting Krishna",
           "Yoga means connection with Krishna"
         ]
@@ -661,18 +661,18 @@ export const chaptersData = [
         title: "K - Krishna is Everything",
         content: "Everything rests upon Krishna like pearls are strung on a thread. Understanding this is the key to spiritual life.",
         subsections: [
-          "Everything rests on Krishna",
+          "Verses 23-28: Everything rests on Krishna",
           "The pearl and thread analogy",
           "Krishna as the support"
         ]
       },
       {
         title: "T - Total Surrender",
-        content: "One must completely surrender to Krishna. This surrender brings immediate protection and guidance.",
+        content: "One should offer everything to Krishna - body, mind, and soul. This is complete surrender.",
         subsections: [
-          "Complete surrender to Krishna",
-          "Divine protection",
-          "Krishna takes care of His devotees"
+          "Verses 29-34: Offering everything to Krishna",
+          "Complete surrender",
+          "The perfection of life"
         ]
       },
       {
@@ -709,7 +709,7 @@ export const chaptersData = [
         title: "O - Opulence",
         content: "Krishna's opulences are unlimited - wealth, strength, beauty, knowledge, and renunciation. As Prabhupada explains, these are His vibhuti.",
         subsections: [
-          "Six opulences in full",
+          "Verses 1-11: Six opulences in full",
           "Krishna's unlimited qualities",
           "The source of all opulence"
         ]
@@ -718,7 +718,7 @@ export const chaptersData = [
         title: "P - Power Everywhere",
         content: "Krishna's power is manifest everywhere - in the sun, moon, fire, and all powerful beings.",
         subsections: [
-          "Power in nature",
+          "Verses 12-21: Power in nature",
           "Krishna as the source of power",
           "Divine energy everywhere"
         ]
@@ -727,7 +727,7 @@ export const chaptersData = [
         title: "U - Understanding",
         content: "By understanding Krishna's opulences, one can recognize Him in everything. This is the beginning of Krishna consciousness.",
         subsections: [
-          "Recognizing Krishna in His opulences",
+          "Verses 22-30: Recognizing Krishna in His opulences",
           "The vision of the devotee",
           "Seeing Krishna everywhere"
         ]
@@ -736,36 +736,36 @@ export const chaptersData = [
         title: "L - Light of the World",
         content: "Krishna is the light of the sun, moon, and fire. All illumination comes from Him.",
         subsections: [
-          "Krishna as the source of light",
-          "Spiritual and physical light",
-          "The illuminator of all knowledge"
+          "Verses 31-35: Krishna as the source of light",
+          "The sun and moon",
+          "Fire and illumination"
         ]
       },
       {
-        title: "E - Energy Manifestations",
-        content: "Everything is Krishna's energy. By seeing His energy, one can understand Him.",
+        title: "E - Energy",
+        content: "Krishna is the source of all energy. All beings are sustained by His energy.",
         subsections: [
-          "Everything as Krishna's energy",
-          "Material and spiritual energies",
-          "Understanding Krishna through His energy"
+          "Verses 36-40: Source of all energy",
+          "Sustaining all beings",
+          "The life force"
         ]
       },
       {
-        title: "N - Nature's Best",
-        content: "The best of everything in nature represents Krishna's opulence - the Himalayas, the Ganges, the best of each species.",
+        title: "N - Nature",
+        content: "All of nature is Krishna's energy. Understanding this helps one see Krishna everywhere.",
         subsections: [
-          "The best in each category",
-          "Nature's representations of Krishna",
-          "The perfection of Krishna's creation"
+          "Verses 41-42: Nature as Krishna's energy",
+          "Seeing Krishna in nature",
+          "The material manifestation"
         ]
       },
       {
         title: "C - Consciousness",
-        content: "Krishna is the consciousness of all living beings. He is the Supersoul within everyone's heart.",
+        content: "Krishna is the source of consciousness. All living beings are conscious because of Krishna.",
         subsections: [
-          "Krishna as Supersoul",
-          "Consciousness comes from Krishna",
-          "The witness within"
+          "Source of consciousness",
+          "Life comes from Krishna",
+          "The origin of life"
         ]
       },
       {
@@ -802,7 +802,7 @@ export const chaptersData = [
         title: "U - Universal Form",
         content: "Krishna shows Arjuna His universal form containing all universes, past, present, and future. As Prabhupada explains, this is the ultimate revelation.",
         subsections: [
-          "All universes in one form",
+          "Verses 1-14: All universes in one form",
           "Past, present, and future visible",
           "The unlimited form of Krishna"
         ]
@@ -811,7 +811,7 @@ export const chaptersData = [
         title: "N - Nature of Time",
         content: "Krishna appears as Time (Kala), the destroyer of all worlds. This shows His control over material nature.",
         subsections: [
-          "Krishna as Time personified",
+          "Verses 15-31: Krishna as Time personified",
           "The destroyer of all worlds",
           "Krishna's control over time"
         ]
@@ -820,7 +820,7 @@ export const chaptersData = [
         title: "I - Infinite Vision",
         content: "The universal form has no beginning or end. It is infinite in all directions.",
         subsections: [
-          "Infinite in all directions",
+          "Verses 32-44: Infinite in all directions",
           "Beyond material limitations",
           "The unlimited nature of Krishna"
         ]
@@ -829,7 +829,7 @@ export const chaptersData = [
         title: "V - Divine Vision",
         content: "Arjuna is granted divine eyes to see the universal form. This vision is not possible with material eyes.",
         subsections: [
-          "Divine eyes required",
+          "Verses 45-49: Divine eyes required",
           "Beyond material perception",
           "The gift of spiritual vision"
         ]
@@ -838,7 +838,7 @@ export const chaptersData = [
         title: "E - Everything Present",
         content: "All beings, all worlds, all times are present in the universal form simultaneously.",
         subsections: [
-          "All beings present",
+          "Verses 50-52: All beings present",
           "All worlds contained",
           "Simultaneous existence"
         ]
@@ -847,7 +847,7 @@ export const chaptersData = [
         title: "R - Revelation",
         content: "This is the revelation of Krishna's true position as the Supreme Personality of Godhead.",
         subsections: [
-          "Krishna's true position revealed",
+          "Verses 53-54: Krishna's true position revealed",
           "The Supreme Personality of Godhead",
           "Beyond impersonal conceptions"
         ]
@@ -856,22 +856,22 @@ export const chaptersData = [
         title: "S - Surrender",
         content: "Overwhelmed by this vision, Arjuna completely surrenders to Krishna. This is the proper response.",
         subsections: [
-          "Complete surrender to Krishna",
-          "The only appropriate response",
+          "Verses 55: Complete surrender",
+          "The proper response",
           "Arjuna's transformation"
         ]
       },
       {
         title: "E - Everything is Krishna",
-        content: "The universal form shows that everything is Krishna - He is everything that exists.",
+        content: "The conclusion - everything that exists is within Krishna. By seeing this, the devotee becomes constantly Krishna conscious.",
         subsections: [
-          "Everything is Krishna",
-          "The vision of oneness",
-          "Krishna as the totality"
+          "Everything belongs to Krishna",
+          "The vision of unity",
+          "Constant Krishna consciousness"
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&h=400&fit=crop"
   },
   {
     id: 12,
@@ -895,7 +895,7 @@ export const chaptersData = [
         title: "D - Devotional Service",
         content: "Personal devotional service (bhakti-yoga) is the highest path. As Prabhupada explains, Krishna is a person, not an impersonal energy.",
         subsections: [
-          "Personal vs impersonal worship",
+          "Verses 1-5: Personal vs impersonal worship",
           "Krishna is a person",
           "The superiority of bhakti"
         ]
@@ -904,7 +904,7 @@ export const chaptersData = [
         title: "E - Engagement",
         content: "The devotee is constantly engaged in Krishna's service - hearing, chanting, remembering, serving, worshiping, praying, and surrendering.",
         subsections: [
-          "Nine processes of devotional service",
+          "Verses 6-11: Nine processes of devotional service",
           "Constant engagement",
           "Twenty-four hours a day for Krishna"
         ]
@@ -913,7 +913,7 @@ export const chaptersData = [
         title: "V - Vision of the Devotee",
         content: "The devotee sees Krishna everywhere and everyone in Krishna. This is the transcendental vision.",
         subsections: [
-          "Seeing Krishna everywhere",
+          "Verses 12-14: Seeing Krishna everywhere",
           "Seeing everyone in Krishna",
           "The equal vision of a devotee"
         ]
@@ -922,7 +922,7 @@ export const chaptersData = [
         title: "O - Offering Everything",
         content: "The devotee offers everything to Krishna - body, mind, and soul. There is no separate interest.",
         subsections: [
-          "Complete offering to Krishna",
+          "Verses 15-17: Complete offering to Krishna",
           "No separate interest",
           "Krishna is the only proprietor"
         ]
@@ -931,18 +931,18 @@ export const chaptersData = [
         title: "T - Transformation",
         content: "Devotion transforms the devotee's heart, removing all material contamination.",
         subsections: [
-          "Purification of the heart",
-          "Removal of material desires",
-          "Transformation of consciousness"
+          "Verses 18-20: Purification of the heart",
+          "Removing material contamination",
+          "Becoming Krishna conscious"
         ]
       },
       {
         title: "E - Excellence",
-        content: "The devotee is excellent in character - tolerant, merciful, friendly, equal to all, and always satisfied.",
+        content: "The devotee who follows this path achieves excellence - returning back to Krishna, the Supreme Personality of Godhead.",
         subsections: [
-          "Qualities of a devotee",
-          "Transcendental qualities",
-          "The ideal character"
+          "Returning to Krishna",
+          "The highest destination",
+          "Perfection of life"
         ]
       }
     ],
@@ -1045,7 +1045,7 @@ export const chaptersData = [
         title: "G - Goodness (Sattva-guna)",
         content: "The mode of goodness is characterized by purity, knowledge, and happiness. As Prabhupada explains, it is still material but the highest platform.",
         subsections: [
-          "Qualities of sattva-guna",
+          "Verses 1-6: Qualities of sattva-guna",
           "Knowledge and happiness",
           "Attachment to happiness"
         ]
@@ -1054,7 +1054,7 @@ export const chaptersData = [
         title: "U - Understanding the Modes",
         content: "One must understand how the three modes work together to condition the soul. This knowledge is essential for transcendence.",
         subsections: [
-          "How modes condition the soul",
+          "Verses 7-10: How modes condition the soul",
           "Interaction of the gunas",
           "Material conditioning explained"
         ]
@@ -1063,7 +1063,7 @@ export const chaptersData = [
         title: "N - Nature of Passion (Rajo-guna)",
         content: "The mode of passion is characterized by desire, attachment, and intense activity. It binds one to material development.",
         subsections: [
-          "Qualities of rajo-guna",
+          "Verses 11-15: Qualities of rajo-guna",
           "Desire and attachment",
           "Material development and bondage"
         ]
@@ -1072,7 +1072,7 @@ export const chaptersData = [
         title: "A - Action under Influence",
         content: "All actions in the material world are performed under the influence of these three modes. No one acts independently.",
         subsections: [
-          "Actions influenced by gunas",
+          "Verses 16-22: Actions influenced by gunas",
           "No independent action",
           "Conditioned behavior"
         ]
@@ -1081,9 +1081,9 @@ export const chaptersData = [
         title: "S - Surrender to Transcend",
         content: "One must transcend all three modes through unalloyed devotional service to Krishna.",
         subsections: [
-          "Transcending the modes",
-          "Bhakti as the only means",
-          "Liberation from gunas"
+          "Verses 23-27: Transcending the modes",
+          "Bhakti as the only way",
+          "Freedom from material conditioning"
         ]
       }
     ],
@@ -1099,9 +1099,9 @@ export const chaptersData = [
     summary: "Krishna reveals Himself as the Supreme Person (Purushottama) - beyond both the perishable material world and the imperishable souls. He explains the nature of the soul and the material world. Prabhupada explains this as establishing Krishna's supreme position.",
     keyTeachings: [
       "Krishna is the Supreme Person beyond all",
-      "There are two Purushas - the living entity and the Supreme",
-      "The soul is an eternal fragment of Krishna",
-      "Knowing Krishna as Supreme leads to liberation"
+      "The perishable (material), imperishable (soul), and Supreme (Krishna)",
+      "Knowing Krishna leads to liberation",
+      "Krishna supports everything"
     ],
     theme: "Supreme Personality",
     acronym: "P.U.R.U.S.H.O.T.T.A.M.A",
@@ -1111,7 +1111,7 @@ export const chaptersData = [
         title: "P - Purushottama",
         content: "Krishna is Purushottama - the Supreme Person, beyond both the perishable material world and the imperishable souls. As Prabhupada explains, He is above everything.",
         subsections: [
-          "Beyond material and spiritual",
+          "Verses 1-3: Beyond material and spiritual",
           "The Supreme Personality",
           "Above all categories"
         ]
@@ -1120,81 +1120,36 @@ export const chaptersData = [
         title: "U - Ultimate Reality",
         content: "Krishna is the ultimate reality - the source of everything, the support of everything, the goal of everything.",
         subsections: [
-          "Source of all existence",
+          "Verses 4-6: Source of everything",
           "Support of everything",
-          "The ultimate destination"
+          "Goal of everything"
         ]
       },
       {
-        title: "R - Reality of the Soul",
-        content: "The soul is an eternal fragment (amsha) of Krishna, part of His spiritual energy.",
+        title: "R - Reality",
+        content: "Krishna explains the distinction between the perishable (material world), the imperishable (souls), and the Supreme (Himself).",
         subsections: [
-          "Soul as Krishna's fragment",
-          "Eternal spiritual nature",
-          "Part of Krishna's energy"
+          "Verses 7-11: Perishable material world",
+          "Imperishable souls",
+          "The Supreme Person"
         ]
       },
       {
-        title: "U - Universal Form",
-        content: "Krishna maintains the entire universe while remaining unchanged. This is His inconceivable potency.",
+        title: "U - Universal",
+        content: "Krishna is universal - He is present everywhere, in everything, and controls everything.",
         subsections: [
-          "Maintaining the universe",
-          "Unchanged by creation",
-          "Inconceivable potency"
+          "Verses 12-14: Present everywhere",
+          "In everything",
+          "Controls everything"
         ]
       },
       {
-        title: "S - Supreme Enjoyer",
-        content: "Krishna is the supreme enjoyer (purusha) while the living entities are subordinate enjoyers.",
+        title: "S - Supreme",
+        content: "Krishna is the Supreme Personality of Godhead, above all other personalities and controllers.",
         subsections: [
-          "Supreme enjoyer",
-          "Subordinate enjoyers",
-          "The relationship of enjoyment"
-        ]
-      },
-      {
-        title: "H - Highest Goal",
-        content: "Knowing Krishna as the Supreme Person is the highest goal of life. This knowledge leads to liberation.",
-        subsections: [
-          "Krishna as the highest goal",
-          "Knowledge leads to liberation",
-          "The perfection of life"
-        ]
-      },
-      {
-        title: "O - Original Person",
-        content: "Krishna is the original person (adi-purusha) from whom everything emanates.",
-        subsections: [
-          "Original person",
-          "Source of emanation",
-          "The origin of everything"
-        ]
-      },
-      {
-        title: "T - Transcendental Position",
-        content: "Krishna's position is completely transcendental, beyond material contamination.",
-        subsections: [
-          "Transcendental position",
-          "Beyond material contamination",
-          "Pure spiritual existence"
-        ]
-      },
-      {
-        title: "T - Two Purushas",
-        content: "There are two purushas - the living entity (ksetra-jna) and the Supreme (Purushottama).",
-        subsections: [
-          "Living entity as purusha",
-          "Krishna as Purushottama",
-          "The distinction"
-        ]
-      },
-      {
-        title: "A - All in Krishna",
-        content: "Everything - perishable, imperishable, and the Supreme - is Krishna. He is everything.",
-        subsections: [
-          "Everything is Krishna",
-          "The vision of oneness",
-          "Krishna as the totality"
+          "Verses 15-17: Above all personalities",
+          "The Supreme Controller",
+          "No one equal or greater"
         ]
       }
     ],
@@ -1222,7 +1177,7 @@ export const chaptersData = [
         title: "D - Divine Qualities",
         content: "Divine qualities include fearlessness, purification, self-control, generosity, and wisdom. As Prabhupada explains, these lead to liberation.",
         subsections: [
-          "Fearlessness and purification",
+          "Verses 1-3: Fearlessness and purification",
           "Self-control and generosity",
           "Wisdom and knowledge"
         ]
@@ -1231,7 +1186,7 @@ export const chaptersData = [
         title: "I - Illumination",
         content: "Divine nature brings illumination - clarity of understanding and spiritual insight about Krishna.",
         subsections: [
-          "Spiritual clarity",
+          "Verses 4-6: Spiritual clarity",
           "Divine understanding",
           "Krishna consciousness"
         ]
@@ -1240,7 +1195,7 @@ export const chaptersData = [
         title: "V - Virtue",
         content: "Virtuous qualities like truthfulness, non-violence, and compassion characterize the divine nature.",
         subsections: [
-          "Truthfulness and austerity",
+          "Verses 7-12: Truthfulness and austerity",
           "Non-violence and simplicity",
           "Compassion and mercy"
         ]
@@ -1249,7 +1204,7 @@ export const chaptersData = [
         title: "I - Integrity",
         content: "Integrity in thought, word, and action - alignment with divine principles and scriptural injunctions.",
         subsections: [
-          "Following scripture",
+          "Verses 13-16: Following scripture",
           "Alignment with dharma",
           "Consistent virtue"
         ]
@@ -1258,7 +1213,7 @@ export const chaptersData = [
         title: "N - Nature of Demonic",
         content: "Demonic nature is characterized by pride, anger, harshness, and ignorance. These lead to destruction.",
         subsections: [
-          "Pride and arrogance",
+          "Verses 17-20: Pride and arrogance",
           "Anger and harshness",
           "Ignorance and delusion"
         ]
@@ -1267,13 +1222,13 @@ export const chaptersData = [
         title: "E - Escape from Hell",
         content: "The three gates to hell are lust, anger, and greed. One must avoid these to attain liberation.",
         subsections: [
-          "Lust, anger, and greed",
+          "Verses 21-24: Lust, anger, and greed",
           "The three gates to hell",
           "Avoiding these qualities"
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1544531766-4444a8f9f86d?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=400&fit=crop"
   },
   {
     id: 17,
@@ -1285,57 +1240,57 @@ export const chaptersData = [
     summary: "Krishna explains three types of faith based on the three modes of material nature. He describes how food, sacrifice, austerity, and charity can be categorized according to these modes. Prabhupada emphasizes that one should cultivate sattvic faith in Krishna.",
     keyTeachings: [
       "Faith is of three types according to the modes",
-      "Sattvic food, sacrifice, austerity, and charity",
-      "Rajasic and tamasic activities are impure",
-      "One should act according to scripture"
+      "Sattvic faith leads to purification",
+      "Rajasic and tamasic faith lead to bondage",
+      "Everything should be offered to Krishna"
     ],
-    theme: "Types of Faith",
+    theme: "Faith and Devotion",
     acronym: "F.A.I.T.H",
-    acronymMeaning: "Faith, Action, Intention, Transformation, Harmony",
+    acronymMeaning: "Faith, Action, Intelligence, Transformation, Harmony",
     acronymSections: [
       {
         title: "F - Faith in the Modes",
-        content: "Faith determines one's nature. Sattvic faith leads to Krishna consciousness, rajasic to material ambition, tamasic to delusion. As Prabhupada explains, one should cultivate sattvic faith.",
+        content: "One's faith is determined by the mode of nature they are influenced by - sattva, rajas, or tamas.",
         subsections: [
-          "Nature of faith according to gunas",
-          "Sattvic faith in Krishna",
-          "Rajasic and tamasic faith"
+          "Verses 1-4: Three types of faith",
+          "According to the gunas",
+          "Determines one's nature"
         ]
       },
       {
-        title: "A - Action According to Faith",
-        content: "Actions reflect one's faith. Sattvic actions are pure and performed for Krishna, rajasic are selfish, tamasic are destructive.",
+        title: "A - Action according to Faith",
+        content: "One performs actions according to their faith. Sattvic faith leads to spiritual actions.",
         subsections: [
-          "Sattvic actions for Krishna",
-          "Rajasic selfish actions",
-          "Tamasic destructive actions"
+          "Verses 5-10: Actions follow faith",
+          "Sattvic actions",
+          "Spiritual results"
         ]
       },
       {
-        title: "I - Intention and Quality",
-        content: "The intention behind actions determines their quality. Sattvic intention is pure and for Krishna's satisfaction.",
+        title: "I - Intelligence and Austerity",
+        content: "Austerity and intelligence are also categorized according to the modes. Sattvic austerity purifies.",
         subsections: [
-          "Pure intention for Krishna",
-          "Selfish desire",
-          "Harmful intent"
+          "Verses 11-18: Types of austerity",
+          "Sattvic austerity",
+          "Purification of consciousness"
         ]
       },
       {
-        title: "T - Types of Food",
-        content: "Krishna categorizes food according to the modes. Sattvic food increases duration of life, rajasic causes pain, tamasic causes misery.",
+        title: "T - Transcending the Modes",
+        content: "One must transcend the influence of the modes by performing everything as an offering to Krishna.",
         subsections: [
-          "Sattvic foods",
-          "Rajasic foods",
-          "Tamasic foods"
+          "Verses 19-23: Offering to Krishna",
+          "Transcending material nature",
+          "Acting for Krishna's pleasure"
         ]
       },
       {
-        title: "H - Harmony with Scripture",
-        content: "One should act according to scriptural injunctions, not according to one's own mental concoctions.",
+        title: "H - Harmony with Krishna",
+        content: "The ultimate goal is to be in harmony with Krishna through devotional service.",
         subsections: [
-          "Following scripture",
-          "Avoiding mental speculation",
-          "Scriptural authority"
+          "Verses 24-28: Harmony with Krishna",
+          "Devotional service",
+          "The perfection of life"
         ]
       }
     ],
@@ -1345,102 +1300,102 @@ export const chaptersData = [
     id: 18,
     name: "Moksha Sanyasa Yoga",
     sanskrit: "मोक्षसंन्यासयोग",
-    english: "Conclusion – The Perfection of Renunciation",
+    english: "Liberation and Renunciation",
     verses: 78,
     connectionWithPreviousChapter: "The concluding chapter summarizes the entire Gita, bringing together all the teachings from the previous chapters and urging complete surrender to Krishna.",
     summary: "The concluding chapter summarizes the entire Gita. Krishna explains renunciation of the fruits of action, the four varnas, and ultimately urges Arjuna to surrender completely to Him for liberation. Prabhupada explains this as the perfection of life - complete surrender to Krishna.",
     keyTeachings: [
-      "Renounce the fruits of action, not action itself",
-      "The four varnas are based on qualities and work",
-      "Complete surrender to Krishna is the highest perfection",
-      "Abandon all varieties of religion and surrender to Krishna"
+      "Complete surrender to Krishna is the perfection of life",
+      "Renounce the fruits of action",
+      "The four varnas and their duties",
+      "Krishna is the ultimate destination"
     ],
     theme: "Liberation and Surrender",
     acronym: "S.U.R.R.E.N.D.E.R",
     acronymMeaning: "Surrender, Unconditional, Renunciation, Results, Everything, Now, Divine, Eternal, Realization",
     acronymSections: [
       {
-        title: "S - Surrender to Krishna",
+        title: "S - Surrender",
         content: "The ultimate instruction - surrender completely to Krishna. As Prabhupada explains, this is the perfection of life.",
         subsections: [
-          "Complete surrender",
-          "Abandon all other dharmas",
-          "Surrender exclusively to Krishna"
+          "Verses 66: Complete surrender to Krishna",
+          "The perfection of life",
+          "Abandon all varieties of religion"
         ]
       },
       {
-        title: "U - Unconditional Devotion",
-        content: "Surrender must be unconditional - without any personal motive or desire for material benefit.",
+        title: "U - Unconditional",
+        content: "Surrender must be unconditional - without any conditions or expectations. This is pure devotion.",
         subsections: [
-          "No personal motive",
-          "Without material desire",
-          "Pure devotion"
+          "No conditions attached",
+          "Pure devotion",
+          "Without expectations"
         ]
       },
       {
-        title: "R - Renunciation of Fruits",
-        content: "One should renounce the fruits of action, not the action itself. Work should be performed for Krishna.",
+        title: "R - Renunciation",
+        content: "True renunciation is giving up the fruits of action, not the action itself. Work for Krishna's pleasure.",
         subsections: [
-          "Renouncing results",
-          "Working for Krishna",
-          "Action without attachment"
+          "Verses 1-12: Renounce fruits of action",
+          "Work for Krishna",
+          "Internal renunciation"
         ]
       },
       {
-        title: "R - Results to Krishna",
-        content: "All results of work should be offered to Krishna. He is the enjoyer of all sacrifices.",
+        title: "R - Results",
+        content: "One should not be attached to the results of action. Leave the results to Krishna.",
         subsections: [
-          "Offering results to Krishna",
-          "Krishna as the enjoyer",
-          "Sacrifice for Krishna"
+          "Verses 13-35: No attachment to results",
+          "Leave results to Krishna",
+          "Freedom from anxiety"
         ]
       },
       {
-        title: "E - Everything for Krishna",
-        content: "One should do everything for Krishna - eating, sleeping, working, and living.",
+        title: "E - Everything",
+        content: "Offer everything to Krishna - your actions, mind, intelligence, and very self.",
         subsections: [
-          "Everything for Krishna",
-          "Krishna consciousness in all activities",
-          "Life for Krishna"
+          "Verses 36-48: Offering everything to Krishna",
+          "Offer actions, mind, intelligence",
+          "Complete offering"
         ]
       },
       {
-        title: "N - Now and Always",
-        content: "Surrender should be immediate and constant. One should surrender now and maintain it always.",
+        title: "N - Now",
+        content: "Surrender now - don't delay. The present moment is the only time we have.",
         subsections: [
-          "Immediate surrender",
-          "Constant surrender",
-          "Never delay"
+          "Verses 49-54: Don't delay surrender",
+          "The present moment",
+          "Immediate action"
         ]
       },
       {
-        title: "D - Divine Protection",
-        content: "Krishna promises to protect those who surrender to Him. He will deliver them from all sinful reactions.",
+        title: "D - Divine",
+        content: "Krishna is divine - the Supreme Personality of Godhead. Surrender to His divine will.",
         subsections: [
-          "Krishna's protection",
-          "Deliverance from sins",
-          "Divine assurance"
+          "Verses 55-60: Krishna's divine nature",
+          "Supreme Personality",
+          "Divine will"
         ]
       },
       {
-        title: "E - Eternal Relationship",
-        content: "Surrender establishes an eternal relationship with Krishna. This relationship continues after death.",
+        title: "E - Eternal",
+        content: "The relationship with Krishna is eternal. Surrender leads to eternal life with Him.",
         subsections: [
-          "Eternal relationship",
-          "Returning to Krishna",
-          "Eternal service"
+          "Verses 61-65: Eternal relationship",
+          "Eternal life with Krishna",
+          "Transcending material existence"
         ]
       },
       {
-        title: "R - Realization of Self",
-        content: "Through surrender, one realizes one's eternal position as Krishna's servant. This is self-realization.",
+        title: "R - Realization",
+        content: "Through surrender, one realizes the eternal relationship with Krishna. This is self-realization.",
         subsections: [
-          "Realizing one's position",
-          "Eternal servant of Krishna",
-          "True self-realization"
+          "Verses 66-78: Realizing the relationship",
+          "Self-realization",
+          "Krishna consciousness"
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop"
   }
 ]
