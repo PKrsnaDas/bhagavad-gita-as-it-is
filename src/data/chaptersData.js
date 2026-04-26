@@ -87,43 +87,47 @@ export const chaptersData = [
       "The soul is never born, never dies, never changes"
     ],
     theme: "Knowledge and Wisdom",
-    acronym: "S.O.U.L.",
-    acronymMeaning: "Soul, Origin, Understanding, Liberation",
+    acronym: "G.I.T.A",
+    acronymMeaning: "Guru, Identity, Two types of duties, Atmaram",
     acronymSections: [
       {
-        title: "S - Soul",
-        content: "Krishna explains that the soul (atma) is eternal, unchanging, and indestructible. As Prabhupada emphasizes, this is the beginning of transcendental knowledge - understanding we are not this material body.",
+        title: "G - Guru (Spiritual Master)",
+        content: "Krishna begins by instructing Arjuna about the nature of the soul and the body. This establishes the guru-disciple relationship where Krishna acts as the spiritual master imparting transcendental knowledge.",
         subsections: [
-          "The soul is eternal and unborn",
-          "The soul is not destroyed when the body is destroyed",
-          "Qualities of the eternal soul"
+          "Verses 1-10: Guru's instructions on the soul",
+          "Krishna as the spiritual master",
+          "Arjuna as the surrendered disciple",
+          "The importance of accepting a spiritual master"
         ]
       },
       {
-        title: "O - Origin",
-        content: "The soul has no origin in material time - it is eternal. Only the material body undergoes birth and death. The soul simply transmigrates from one body to another.",
+        title: "I - Identity (Soul vs Body)",
+        content: "Krishna explains the eternal identity of the soul (atma) versus the temporary material body. The soul is eternal, unchanging, and indestructible, while the body undergoes birth and death.",
         subsections: [
-          "Transmigration of the soul",
-          "The soul changes bodies like garments",
-          "No birth or death for the soul"
+          "Verses 11-30: Understanding true identity",
+          "The soul is eternal and never dies",
+          "The body is temporary and perishable",
+          "Transmigration of the soul from body to body"
         ]
       },
       {
-        title: "U - Understanding",
-        content: "One must understand the difference between matter and spirit. This analytical study (Sankhya) is the foundation of spiritual knowledge.",
+        title: "T - Two Types of Duties",
+        content: "Krishna distinguishes between two types of duties: the ordinary material duties of the body, and the transcendental duty of the soul. He emphasizes that one must perform their prescribed duties while remaining transcendental.",
         subsections: [
-          "Analytical study of the soul and matter",
-      "Discriminating between the two natures",
-      "The path of knowledge (jnana)"
+          "Verses 31-53: Material vs Spiritual duties",
+          "Prescribed duties according to one's nature",
+          "Performing duties without attachment",
+          "The yoga of action (Karma Yoga)"
         ]
       },
       {
-        title: "L - Liberation",
-        content: "Understanding the soul's eternal nature is the first step toward liberation. One who knows this truth does not grieve for the body.",
+        title: "A - Atmaram (Self-satisfied)",
+        content: "One who is self-satisfied (atmarama) is not affected by material dualities. Krishna explains how the self-realized person remains equipoised in happiness and distress, understanding the eternal nature of the soul.",
         subsections: [
-          "Freedom from material grief",
-      "Transcending birth and death",
-      "The goal of self-realization"
+          "Verses 54-72: The state of self-realization",
+          "Equanimity in pleasure and pain",
+          "Freedom from material attachment",
+          "The goal of yoga - self-realization"
         ]
       }
     ],
