@@ -133,7 +133,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter2.png"
   },
   {
     id: 3,
@@ -198,7 +198,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter3.png"
   },
   {
     id: 4,
@@ -264,7 +264,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter4.png"
   },
   {
     id: 5,
@@ -357,7 +357,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1519881399784-d1202679333b?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter5.png"
   },
   {
     id: 6,
@@ -450,7 +450,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter6.png"
   },
   {
     id: 7,
@@ -535,82 +535,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1464422852223-fed622fc3cbb?w=800&h=400&fit=crop"
-  },
-  {
-    id: 8,
-    name: "Aksara Brahma Yoga",
-    sanskrit: "अक्षरब्रह्मयोग",
-    english: "Attaining the Supreme",
-    verses: 28,
-    connectionWithPreviousChapter: "Builds on Chapter 7's description of Krishna's opulence by explaining how to attain the Supreme Personality of Godhead by remembering Him at the time of death.",
-    summary: "Krishna explains how to attain the Supreme by remembering Him at the time of death. He describes the paths of light and darkness that souls take after death. Prabhupada emphasizes the importance of constant Krishna consciousness throughout life.",
-    keyTeachings: [
-      "Remembering Krishna at the time of death ensures return to Him",
-      "The path of light leads back to Krishna",
-      "The path of darkness leads to material rebirth",
-      "Constant Krishna consciousness is essential"
-    ],
-    theme: "Eternal Reality",
-    acronym: "A.T.T.A.I.N.",
-    acronymMeaning: "Attainment, Time, Awareness, Intelligence, Nature",
-    acronymSections: [
-      {
-        title: "A - Attainment of the Supreme",
-        content: "One who remembers Krishna at the time of death attains His transcendental nature. As Prabhupada explains, this is the ultimate goal of life.",
-        subsections: [
-          "Verses 1-6: Remembering Krishna at death",
-          "Attaining Krishna's nature",
-          "The ultimate destination"
-        ]
-      },
-      {
-        title: "T - Time of Death",
-        content: "The state of mind at the time of death determines the next destination. Therefore, one must practice Krishna consciousness throughout life.",
-        subsections: [
-          "Verses 7-13: Final consciousness determines next life",
-          "The importance of practice",
-          "Preparation for death"
-        ]
-      },
-      {
-        title: "T - Two Paths",
-        content: "Krishna describes two paths - the path of light (returning to Krishna) and the path of darkness (returning to material world).",
-        subsections: [
-          "Verses 14-21: The path of light (day)",
-          "The path of darkness (night)",
-          "Never return vs return to birth"
-        ]
-      },
-      {
-        title: "A - Always Remember",
-        content: "One should always remember Krishna and never forget Him. This is the instruction of all scriptures.",
-        subsections: [
-          "Verses 22-28: Constant remembrance of Krishna",
-          "The essence of all scriptures",
-          "Yoga means remembering Krishna"
-        ]
-      },
-      {
-        title: "I - Intelligence",
-        content: "Krishna explains His control over time and how souls travel through time according to their consciousness.",
-        subsections: [
-          "Krishna's control over time",
-          "The cycle of creation",
-          "Transcending time"
-        ]
-      },
-      {
-        title: "N - Nature of Time",
-        content: "The material world is controlled by time, but Krishna is beyond time. Those who know this transcend material existence.",
-        subsections: [
-          "Time as a controller",
-          "Krishna beyond time",
-          "Transcending material time"
-        ]
-      }
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1518708768805-0e2654af9f94?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter8.png"
   },
   {
     id: 9,
@@ -685,7 +610,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter9.png"
   },
   {
     id: 10,
@@ -778,7 +703,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter9.png"
   },
   {
     id: 11,
@@ -871,7 +796,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter10.png"
   },
   {
     id: 12,
@@ -1021,7 +946,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter12.png"
   },
   {
     id: 14,
@@ -1087,7 +1012,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter14.png"
   },
   {
     id: 15,
@@ -1153,7 +1078,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter15.png"
   },
   {
     id: 16,
@@ -1228,7 +1153,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1544531766-4444a8f9f86d?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter16.png"
   },
   {
     id: 17,
@@ -1396,6 +1321,6 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=400&fit=crop"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter18.png"
   }
 ]
