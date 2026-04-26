@@ -72,7 +72,7 @@ export const chaptersData = [
         ]
       }
     ],
-    imageUrl: "images/Chapter1.png"
+    imageUrl: "/bhagavad-gita-as-it-is/images/Chapter1.png"
   },
   {
     id: 2,
