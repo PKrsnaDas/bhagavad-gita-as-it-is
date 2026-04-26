@@ -5,6 +5,29 @@ import { useState } from 'react'
 
 const ChaptersOverview = ({ onSelectChapter }) => {
   const [searchTerm, setSearchTerm] = useState('')
+  const acronymColors = [
+    'text-red-500 dark:text-red-400',
+    'text-amber-500 dark:text-amber-400',
+    'text-emerald-500 dark:text-emerald-400',
+    'text-sky-500 dark:text-sky-400',
+    'text-violet-500 dark:text-violet-400',
+    'text-pink-500 dark:text-pink-400'
+  ]
+
+  const renderColoredAcronym = (acronym) => {
+    const syllables = acronym.split('.').filter(Boolean)
+
+    return (
+      <span className="inline-flex flex-wrap items-center gap-0.5">
+        {syllables.map((syllable, index) => (
+          <span key={`${syllable}-${index}`} className={`font-bold ${acronymColors[index % acronymColors.length]}`}>
+            {syllable}
+            {index < syllables.length - 1 && <span className="text-gray-500 dark:text-gray-400">.</span>}
+          </span>
+        ))}
+      </span>
+    )
+  }
 
   const filteredChapters = chaptersData.filter(chapter =>
     chapter.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -86,8 +109,8 @@ const ChaptersOverview = ({ onSelectChapter }) => {
                     </p>
                     {chapter.acronym && (
                       <div className="inline-block px-3 py-1 bg-gradient-to-r from-orange-100 to-amber-100 dark:from-orange-900/30 dark:to-amber-900/30 rounded-full">
-                        <span className="text-sm font-bold text-orange-700 dark:text-orange-300">
-                          {chapter.acronym}
+                        <span className="text-sm">
+                          {renderColoredAcronym(chapter.acronym)}
                         </span>
                       </div>
                     )}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Menu, X, Moon, Sun, BookOpen } from 'lucide-react'
 
-const Navbar = ({ darkMode, setDarkMode }) => {
+const Navbar = ({ darkMode, setDarkMode, user, onOpenAuth, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
@@ -40,6 +40,27 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               >
                 {darkMode ? <Sun size={20} /> : <Moon size={20} />}
               </button>
+
+              {user ? (
+                <div className="flex items-center gap-3">
+                  <span className="text-sm text-gray-700 dark:text-gray-300 max-w-[160px] truncate">
+                    {user.email}
+                  </span>
+                  <button
+                    onClick={onLogout}
+                    className="px-3 py-1.5 rounded-lg bg-orange-100 dark:bg-gray-800 text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-gray-700 text-sm"
+                  >
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={onOpenAuth}
+                  className="px-3 py-1.5 rounded-lg bg-orange-100 dark:bg-gray-800 text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-gray-700 text-sm"
+                >
+                  Login
+                </button>
+              )}
             </div>
           </div>
 
@@ -50,6 +71,21 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
+            {user ? (
+              <button
+                onClick={onLogout}
+                className="px-3 py-1.5 rounded-lg bg-orange-100 dark:bg-gray-800 text-orange-700 dark:text-orange-300 text-sm"
+              >
+                Logout
+              </button>
+            ) : (
+              <button
+                onClick={onOpenAuth}
+                className="px-3 py-1.5 rounded-lg bg-orange-100 dark:bg-gray-800 text-orange-700 dark:text-orange-300 text-sm"
+              >
+                Login
+              </button>
+            )}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-orange-100 dark:hover:bg-gray-800"

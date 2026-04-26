@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft, Book, CheckCircle, Sparkles, ChevronDown, ChevronRight, Image as ImageIcon } from 'lucide-react'
 import { useState } from 'react'
+import ChapterNotes from './ChapterNotes'
 
-const ChapterDetail = ({ chapter, onBack }) => {
+const ChapterDetail = ({ chapter, onBack, user }) => {
   const [expandedSections, setExpandedSections] = useState({})
+  const acronymColors = [
+    'text-red-500 dark:text-red-400',
+    'text-amber-500 dark:text-amber-400',
+    'text-emerald-500 dark:text-emerald-400',
+    'text-sky-500 dark:text-sky-400',
+    'text-violet-500 dark:text-violet-400',
+    'text-pink-500 dark:text-pink-400'
+  ]
 
   const toggleSection = (index) => {
     setExpandedSections(prev => ({
@@ -17,6 +26,21 @@ const ChapterDetail = ({ chapter, onBack }) => {
       ...prev,
       [`${sectionIndex}-${subsectionIndex}`]: !prev[`${sectionIndex}-${subsectionIndex}`]
     }))
+  }
+
+  const renderColoredAcronym = (acronym) => {
+    const syllables = acronym.split('.').filter(Boolean)
+
+    return (
+      <span className="inline-flex flex-wrap items-center gap-1">
+        {syllables.map((syllable, index) => (
+          <span key={`${syllable}-${index}`} className={`font-bold ${acronymColors[index % acronymColors.length]}`}>
+            {syllable}
+            {index < syllables.length - 1 && <span className="text-gray-500 dark:text-gray-400">.</span>}
+          </span>
+        ))}
+      </span>
+    )
   }
 
   return (
@@ -111,8 +135,11 @@ const ChapterDetail = ({ chapter, onBack }) => {
             {chapter.acronym && (
               <div className="mb-8">
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                  Chapter Acronym: {chapter.acronym}
+                  Chapter Acronym:
                 </h2>
+                <div className="text-3xl mb-4">
+                  {renderColoredAcronym(chapter.acronym)}
+                </div>
                 <p className="text-lg text-orange-600 dark:text-orange-400 mb-6 italic">
                   {chapter.acronymMeaning}
                 </p>
@@ -130,7 +157,12 @@ const ChapterDetail = ({ chapter, onBack }) => {
                         onClick={() => toggleSection(index)}
                         className="w-full p-4 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-gray-700 dark:to-gray-800 flex items-center justify-between hover:from-orange-100 hover:to-amber-100 dark:hover:from-gray-600 dark:hover:to-gray-700 transition-colors"
                       >
-                        <span className="font-semibold text-gray-900 dark:text-white">{section.title}</span>
+                        <span className="font-semibold text-gray-900 dark:text-white">
+                          <span className={`${acronymColors[index % acronymColors.length]} font-bold`}>
+                            {section.title.split(' - ')[0]}
+                          </span>
+                          {section.title.includes(' - ') ? ` - ${section.title.split(' - ').slice(1).join(' - ')}` : ''}
+                        </span>
                         {expandedSections[index] ? (
                           <ChevronDown className="text-orange-600 dark:text-orange-400" size={20} />
                         ) : (
@@ -194,22 +226,9 @@ const ChapterDetail = ({ chapter, onBack }) => {
                 ))}
               </ul>
             </div>
-          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 p-6 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl text-white shadow-lg"
-          >
-            <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-              <Sparkles size={24} />
-              Study Tip
-            </h3>
-            <p className="text-orange-100">
-              Read this chapter slowly and reflect on how its teachings apply to your life. Consider journaling your thoughts and insights. Use the acronym sections to deepen your understanding of each concept.
-            </p>
-          </motion.div>
+            <ChapterNotes chapterId={chapter.id} user={user} />
+          </div>
         </motion.div>
       </div>
     </section>
