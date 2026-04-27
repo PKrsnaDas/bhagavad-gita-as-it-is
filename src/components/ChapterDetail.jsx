@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowLeft, Book, CheckCircle, Sparkles, ChevronDown, ChevronRight, Image as ImageIcon } from 'lucide-react'
-import { useState } from 'react'
+import { ArrowLeft, Book, CheckCircle, Sparkles, ChevronDown, ChevronRight } from 'lucide-react'
+import { Fragment, useState } from 'react'
 import ChapterNotes from './ChapterNotes'
 
 const ChapterDetail = ({ chapter, onBack, user }) => {
@@ -43,6 +43,16 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
     )
   }
 
+  const flowSteps = (chapter.acronymSections || []).map((section, index) => {
+    const [head, ...rest] = section.title.split(' - ')
+    return {
+      id: `${head}-${index}`,
+      letter: head,
+      label: rest.join(' - ') || head,
+      description: section.content
+    }
+  })
+
   return (
     <section className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
@@ -77,7 +87,7 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
             </motion.div>
           )}
 
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-8 shadow-xl border border-gray-200 dark:border-gray-700">
             <div className="flex items-start justify-between mb-6">
               <div className="p-4 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl">
                 <Book className="text-white" size={32} />
@@ -89,7 +99,7 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
               </div>
             </div>
 
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
               {chapter.name}
             </h1>
             <p className="text-xl text-orange-600 dark:text-orange-400 mb-4 font-medium">
@@ -99,7 +109,7 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
               {chapter.english}
             </p>
 
-            <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-6 mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-2">
                 <Sparkles className="text-orange-500" size={20} />
                 <span className="text-gray-700 dark:text-gray-300 font-medium">{chapter.verses} Verses</span>
@@ -203,6 +213,85 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
                       )}
                     </motion.div>
                   ))}
+                </div>
+              </div>
+            )}
+
+            {flowSteps.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+                  Concept Flow Diagram
+                </h2>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-5">
+                  Visual sequence of this chapter&apos;s core teaching progression.
+                </p>
+
+                <div className="sm:hidden space-y-2">
+                  {flowSteps.map((step, index) => (
+                    <Fragment key={`${step.id}-mobile`}>
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.35, delay: index * 0.08 }}
+                        className="p-4 rounded-xl border border-orange-200 dark:border-gray-600 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-700 dark:to-gray-800 shadow-sm"
+                      >
+                        <p className="text-xs uppercase tracking-wide text-orange-700 dark:text-orange-300 mb-2">
+                          Step {index + 1}
+                        </p>
+                        <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">
+                          <span className={`${acronymColors[index % acronymColors.length]} font-bold`}>
+                            {step.letter}
+                          </span>
+                          <span className="text-gray-500 dark:text-gray-400"> - </span>
+                          {step.label}
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+                          {step.description}
+                        </p>
+                      </motion.div>
+
+                      {index < flowSteps.length - 1 && (
+                        <div className="flex justify-center text-orange-500 dark:text-orange-400 text-lg font-bold" aria-hidden="true">
+                          ↓
+                        </div>
+                      )}
+                    </Fragment>
+                  ))}
+                </div>
+
+                <div className="hidden sm:block overflow-x-auto pb-2">
+                  <div className="min-w-max flex items-center gap-3">
+                    {flowSteps.map((step, index) => (
+                      <Fragment key={`${step.id}-desktop`}>
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.35, delay: index * 0.08 }}
+                          className="w-64 p-4 rounded-xl border border-orange-200 dark:border-gray-600 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-700 dark:to-gray-800 shadow-sm"
+                        >
+                          <p className="text-xs uppercase tracking-wide text-orange-700 dark:text-orange-300 mb-2">
+                            Step {index + 1}
+                          </p>
+                          <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">
+                            <span className={`${acronymColors[index % acronymColors.length]} font-bold`}>
+                              {step.letter}
+                            </span>
+                            <span className="text-gray-500 dark:text-gray-400"> - </span>
+                            {step.label}
+                          </h3>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+                            {step.description}
+                          </p>
+                        </motion.div>
+
+                        {index < flowSteps.length - 1 && (
+                          <div className="text-orange-500 dark:text-orange-400 text-xl font-bold px-1" aria-hidden="true">
+                            →
+                          </div>
+                        )}
+                      </Fragment>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}

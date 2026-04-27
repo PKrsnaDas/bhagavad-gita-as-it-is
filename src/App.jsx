@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ChaptersOverview from './components/ChaptersOverview'
 import ChapterFlowGraph from './components/ChapterFlowGraph'
-import ChapterDetail from './components/ChapterDetail'
 import Footer from './components/Footer'
-import AuthModal from './components/AuthModal'
 import { supabase, isSupabaseConfigured } from './lib/supabaseClient'
+
+const ChapterDetail = lazy(() => import('./components/ChapterDetail'))
+const AuthModal = lazy(() => import('./components/AuthModal'))
 
 function App() {
   const [darkMode, setDarkMode] = useState(true)
@@ -48,22 +49,32 @@ function App() {
           onOpenAuth={() => setAuthOpen(true)}
           onLogout={handleLogout}
         />
-        {selectedChapter ? (
-          <ChapterDetail
-            chapter={selectedChapter}
-            onBack={() => setSelectedChapter(null)}
-            user={user}
-          />
-        ) : (
-          <>
-            <Hero />
-            <ChaptersOverview onSelectChapter={setSelectedChapter} />
-            <ChapterFlowGraph />
-          </>
-        )}
+        <Suspense
+          fallback={
+            <div className="px-4 sm:px-6 lg:px-8 py-16 text-center text-gray-600 dark:text-gray-400">
+              Loading content...
+            </div>
+          }
+        >
+          {selectedChapter ? (
+            <ChapterDetail
+              chapter={selectedChapter}
+              onBack={() => setSelectedChapter(null)}
+              user={user}
+            />
+          ) : (
+            <>
+              <Hero />
+              <ChaptersOverview onSelectChapter={setSelectedChapter} />
+              <ChapterFlowGraph />
+            </>
+          )}
+        </Suspense>
         <Footer />
       </div>
-      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
+      <Suspense fallback={null}>
+        <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
+      </Suspense>
     </div>
   )
 }

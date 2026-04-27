@@ -1091,7 +1091,7 @@ export const chaptersData = [
   },
   {
     id: 15,
-    name: "Purushottama Yoga",
+    name: "Imperishable Banyan Tree of Material Nature",
     sanskrit: "पुरुषोत्तमयोग",
     english: "The Yoga of the Supreme Person",
     verses: 20,
