@@ -48,11 +48,11 @@ const FlowNode = ({ data, id, isConnectable }) => {
     <div
       className={`relative rounded-2xl border-2 shadow-md px-4 py-3 min-w-[150px] max-w-[210px] ${colorClass}`}
     >
-      {/* Handles — all 4 sides */}
-      <Handle type="target"  position={Position.Top}    isConnectable={isConnectable} style={handleStyle} />
-      <Handle type="target"  position={Position.Left}   isConnectable={isConnectable} style={{ ...handleStyle, top: '50%' }} />
-      <Handle type="source"  position={Position.Bottom} isConnectable={isConnectable} style={handleStyle} />
-      <Handle type="source"  position={Position.Right}  isConnectable={isConnectable} style={{ ...handleStyle, top: '50%' }} />
+      {/* Handles — all 4 sides, all source (ConnectionMode.Loose enables any→any) */}
+      <Handle id="top"    type="source" position={Position.Top}    isConnectable={isConnectable} style={handleStyle} />
+      <Handle id="right"  type="source" position={Position.Right}  isConnectable={isConnectable} style={handleStyle} />
+      <Handle id="bottom" type="source" position={Position.Bottom} isConnectable={isConnectable} style={handleStyle} />
+      <Handle id="left"   type="source" position={Position.Left}   isConnectable={isConnectable} style={handleStyle} />
 
       {/* Delete button — edit mode only */}
       {data.isEditMode && (

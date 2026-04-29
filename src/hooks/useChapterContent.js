@@ -11,10 +11,11 @@ export const useChapterContent = (chapter) => {
   const [canUndo, setCanUndo] = useState(false)
   const [canRedo, setCanRedo] = useState(false)
 
-  const overridesRef  = useRef({})
-  const undoRef       = useRef([])
-  const redoRef       = useRef([])
-  const saveTimerRef  = useRef(null)
+  const overridesRef    = useRef({})
+  const undoRef         = useRef([])
+  const redoRef         = useRef([])
+  const saveTimerRef    = useRef(null)
+  const undoPendingRef  = useRef(null)   // debounce handle for undo batching
   const useSupabase   = isSupabaseConfigured && supabase && isNumericId(chapter.id)
 
   /* keep ref in sync with state */
@@ -75,11 +76,21 @@ export const useChapterContent = (chapter) => {
   const updateField = useCallback((field, value) => {
     const prev = overridesRef.current
     const next = { ...prev, [field]: value }
-    undoRef.current = [...undoRef.current.slice(-(MAX_HISTORY - 1)), prev]
+
+    /* Debounced undo: only record the state BEFORE a burst of edits.
+       The first change in a burst pushes prev to the undo stack.
+       Subsequent changes within 800 ms do NOT push (they just update live).
+       After 800 ms of silence the next change starts a new burst. */
+    if (!undoPendingRef.current) {
+      undoRef.current = [...undoRef.current.slice(-(MAX_HISTORY - 1)), prev]
+      setCanUndo(true)
+    }
+    clearTimeout(undoPendingRef.current)
+    undoPendingRef.current = setTimeout(() => { undoPendingRef.current = null }, 800)
+
     redoRef.current = []
     overridesRef.current = next
     setOverrides(next)
-    setCanUndo(true)
     setCanRedo(false)
     persist(next)
   }, [persist])

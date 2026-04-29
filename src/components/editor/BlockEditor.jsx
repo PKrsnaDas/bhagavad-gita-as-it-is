@@ -509,7 +509,7 @@ const BlockEditor = ({ blocks = [], onChange, placeholder = 'Click + to add cont
       )}
 
       {showPicker && createPortal(
-        <BlockPicker onPick={addBlock} onClose={() => setShowPicker(false)} />,
+        <BlockPicker onPick={addBlock} onClose={() => { setShowPicker(false); setLastAddedId(null) }} />,
         document.body
       )}
     </div>

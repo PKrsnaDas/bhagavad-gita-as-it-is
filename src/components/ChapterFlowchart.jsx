@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   ReactFlow,
   addEdge,
   Background,
   BackgroundVariant,
+  ConnectionMode,
   Controls,
   MarkerType,
   MiniMap,
@@ -42,7 +43,9 @@ const buildDefaultEdges = (chapter) => {
   return sections.slice(0, -1).map((_, i) => ({
     id: `edge-default-${i}`,
     source: `node-${i}`,
+    sourceHandle: 'bottom',
     target: `node-${i + 1}`,
+    targetHandle: 'top',
     ...edgeDefaults,
   }))
 }
@@ -110,10 +113,10 @@ const ChapterFlowchart = ({ chapter }) => {
   }, [setNodes, setEdges])
 
   /* ── Inject callbacks + editMode flag into node data ─────── */
-  const displayNodes = nodes.map(n => ({
+  const displayNodes = useMemo(() => nodes.map(n => ({
     ...n,
     data: { ...n.data, isEditMode: editMode, onChange: updateLabel, onDelete: deleteNode },
-  }))
+  })), [nodes, editMode, updateLabel, deleteNode])
 
   /* ── Connect ──────────────────────────────────────────────── */
   const onConnect = useCallback((params) => {
@@ -128,8 +131,8 @@ const ChapterFlowchart = ({ chapter }) => {
       {
         id,
         type: 'flowNode',
-        position: { x: 100 + Math.random() * 350, y: 100 + Math.random() * 300 },
-        data: { label: 'New Concept', colorIndex: ns.length, isEditMode: true, onChange: updateLabel, onDelete: deleteNode },
+        position: { x: 80 + Math.random() * 400, y: 80 + Math.random() * 350 },
+        data: { label: 'New Concept', colorIndex: ns.length % 8 },
       },
     ])
   }
@@ -205,6 +208,8 @@ const ChapterFlowchart = ({ chapter }) => {
             onEdgesChange={editMode ? onEdgesChange : undefined}
             onConnect={editMode ? onConnect : undefined}
             nodeTypes={nodeTypes}
+            connectionMode={ConnectionMode.Loose}
+            defaultEdgeOptions={edgeDefaults}
             nodesDraggable={editMode}
             nodesConnectable={editMode}
             elementsSelectable={editMode}

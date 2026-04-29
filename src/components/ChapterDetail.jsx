@@ -14,10 +14,12 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
   const { isEditMode } = useEditMode()
   const { content, updateField, undo, redo, canUndo, canRedo, saveStatus } = useChapterContent(chapter)
 
-  /* Ctrl+Z / Ctrl+Y keyboard shortcuts */
+  /* Ctrl+Z / Ctrl+Y keyboard shortcuts — skip when a text input is focused */
   useEffect(() => {
     if (!isEditMode) return
     const handler = (e) => {
+      const tag = (e.target?.tagName || '').toLowerCase()
+      if (tag === 'input' || tag === 'textarea') return   // let browser handle native undo
       if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) { e.preventDefault(); undo() }
       if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) { e.preventDefault(); redo() }
     }
