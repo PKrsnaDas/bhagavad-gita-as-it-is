@@ -1,3 +1,22 @@
+-- ── Flowcharts (public read, open write — password gate is in the frontend) ──
+create table if not exists public.chapter_flowcharts (
+  chapter_id  integer primary key,
+  nodes       jsonb not null default '[]',
+  edges       jsonb not null default '[]',
+  updated_at  timestamptz not null default now()
+);
+
+alter table public.chapter_flowcharts enable row level security;
+
+create policy "flowcharts_public_read"
+  on public.chapter_flowcharts
+  for select using (true);
+
+create policy "flowcharts_public_write"
+  on public.chapter_flowcharts
+  for all using (true) with check (true);
+
+-- ── Notes ────────────────────────────────────────────────────────────────────
 create table if not exists public.chapter_notes (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,

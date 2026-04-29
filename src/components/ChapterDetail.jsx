@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft, Book, CheckCircle, Sparkles, ChevronDown, ChevronRight } from 'lucide-react'
-import { Fragment, useState } from 'react'
+import { Fragment, lazy, Suspense, useState } from 'react'
 import ChapterNotes from './ChapterNotes'
+
+const ChapterFlowchart = lazy(() => import('./ChapterFlowchart'))
 
 const ChapterDetail = ({ chapter, onBack, user }) => {
   const [expandedSections, setExpandedSections] = useState({})
@@ -315,6 +317,10 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
                 ))}
               </ul>
             </div>
+
+            <Suspense fallback={<div className="h-48 flex items-center justify-center text-gray-400 dark:text-gray-500 text-sm">Loading flowchart…</div>}>
+              <ChapterFlowchart chapter={chapter} />
+            </Suspense>
 
             <ChapterNotes chapterId={chapter.id} user={user} />
           </div>
