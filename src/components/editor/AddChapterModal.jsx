@@ -18,8 +18,6 @@ const AddChapterModal = ({ onClose, onCreated }) => {
       english: form.english.trim(),
       theme: form.theme.trim(),
       summary: form.summary.trim(),
-      custom: true,
-      created_at: new Date().toISOString(),
     }
 
     if (isSupabaseConfigured && supabase) {

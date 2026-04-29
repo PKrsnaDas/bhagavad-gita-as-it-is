@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom'
 import { useState } from 'react'
 import {
   BarChart2, CheckCircle, ChevronDown, ChevronUp, Image as ImageIcon,
@@ -398,8 +399,8 @@ const BlockPicker = ({ onPick, onClose }) => (
 )
 
 /* ──────────────────────── single block item ────────────────────── */
-const BlockItem = ({ block, index, total, onUpdate, onDelete, onMoveUp, onMoveDown }) => {
-  const [editing, setEditing] = useState(false)
+const BlockItem = ({ block, index, total, onUpdate, onDelete, onMoveUp, onMoveDown, isNew = false }) => {
+  const [editing, setEditing] = useState(isNew)
   const Renderer = RENDERERS[block.type]
   const Editor   = EDITORS[block.type]
 
@@ -422,7 +423,7 @@ const BlockItem = ({ block, index, total, onUpdate, onDelete, onMoveUp, onMoveDo
       </div>
 
       {/* Block content */}
-      <div className={`rounded-lg transition-all ${editing ? 'ring-2 ring-orange-400 bg-orange-50/30 dark:bg-orange-900/10' : 'ring-1 ring-dashed ring-transparent hover:ring-orange-200 dark:hover:ring-orange-800'}`}>
+      <div className={`rounded-lg transition-all ${editing ? 'ring-2 ring-orange-400 bg-orange-50/30 dark:bg-orange-900/10' : 'ring-1 ring-dashed ring-orange-200 dark:ring-orange-700 hover:ring-orange-400'}`}>
         <div className={editing ? 'p-3' : 'px-1 py-0.5'}>
           {editing && Editor ? (
             <div className="mb-3">
@@ -441,9 +442,11 @@ const BlockEditor = ({ blocks = [], onChange, placeholder = 'Click + to add cont
   const { isEditMode } = useEditMode()
   const [showPicker, setShowPicker] = useState(false)
   const [insertAt, setInsertAt] = useState(null)
+  const [lastAddedId, setLastAddedId] = useState(null)
 
   const addBlock = (type) => {
     const nb = defaultBlock(type)
+    setLastAddedId(nb.id)
     if (insertAt !== null) {
       const arr = [...blocks]
       arr.splice(insertAt + 1, 0, nb)
@@ -485,6 +488,7 @@ const BlockEditor = ({ blocks = [], onChange, placeholder = 'Click + to add cont
               block={block}
               index={index}
               total={blocks.length}
+              isNew={block.id === lastAddedId}
               onUpdate={updateBlock}
               onDelete={() => deleteBlock(block.id)}
               onMoveUp={() => moveUp(index)}
@@ -505,7 +509,10 @@ const BlockEditor = ({ blocks = [], onChange, placeholder = 'Click + to add cont
         </button>
       )}
 
-      {showPicker && <BlockPicker onPick={addBlock} onClose={() => setShowPicker(false)} />}
+      {showPicker && createPortal(
+        <BlockPicker onPick={addBlock} onClose={() => setShowPicker(false)} />,
+        document.body
+      )}
     </div>
   )
 }

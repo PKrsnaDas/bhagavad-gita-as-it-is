@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Menu, X, Moon, Sun, BookOpen, Lock, Pencil } from 'lucide-react'
 import { useEditMode } from '../context/EditModeContext'
 
-const Navbar = ({ darkMode, setDarkMode, user, onOpenAuth, onLogout }) => {
+const Navbar = ({ darkMode, setDarkMode, user, onOpenAuth, onLogout, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [showPwModal, setShowPwModal] = useState(false)
   const [pw, setPw] = useState('')
@@ -15,10 +15,15 @@ const Navbar = ({ darkMode, setDarkMode, user, onOpenAuth, onLogout }) => {
   }
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home',     href: '#home'     },
     { name: 'Chapters', href: '#chapters' },
-    { name: 'Flow', href: '#flow' },
+    { name: 'Flow',     href: '#flow'     },
   ]
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+    onNavigate?.(href)
+  }
 
   return (
     <>
@@ -29,7 +34,7 @@ const Navbar = ({ darkMode, setDarkMode, user, onOpenAuth, onLogout }) => {
             <div className="p-2 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg">
               <BookOpen className="text-white" size={24} />
             </div>
-            <a href="#home" className="text-xl font-bold text-gray-900 dark:text-white">
+            <a href="#home" onClick={e => handleNavClick(e, '#home')} className="text-xl font-bold text-gray-900 dark:text-white">
               Bhagavad Gita
             </a>
           </div>
@@ -40,6 +45,7 @@ const Navbar = ({ darkMode, setDarkMode, user, onOpenAuth, onLogout }) => {
                 <a
                   key={link.name}
                   href={link.href}
+                  onClick={e => handleNavClick(e, link.href)}
                   className="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium"
                 >
                   {link.name}
@@ -140,7 +146,7 @@ const Navbar = ({ darkMode, setDarkMode, user, onOpenAuth, onLogout }) => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={e => { setIsOpen(false); handleNavClick(e, link.href) }}
                 className="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium"
               >
                 {link.name}

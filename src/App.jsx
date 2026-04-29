@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { EditModeProvider } from './context/EditModeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -15,6 +15,23 @@ function App() {
   const [selectedChapter, setSelectedChapter] = useState(null)
   const [user, setUser] = useState(null)
   const [authOpen, setAuthOpen] = useState(false)
+  const scrollTargetRef = useRef(null)
+
+  const navigateTo = useCallback((hash) => {
+    scrollTargetRef.current = hash
+    setSelectedChapter(null)
+  }, [])
+
+  useEffect(() => {
+    if (!selectedChapter && scrollTargetRef.current) {
+      const target = scrollTargetRef.current
+      scrollTargetRef.current = null
+      setTimeout(() => {
+        const el = document.getElementById(target.replace('#', ''))
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 80)
+    }
+  }, [selectedChapter])
 
   useEffect(() => {
     if (!isSupabaseConfigured || !supabase) return
@@ -50,6 +67,7 @@ function App() {
           user={user}
           onOpenAuth={() => setAuthOpen(true)}
           onLogout={handleLogout}
+          onNavigate={navigateTo}
         />
         <Suspense
           fallback={

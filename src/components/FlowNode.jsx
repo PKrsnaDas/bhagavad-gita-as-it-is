@@ -57,8 +57,9 @@ const FlowNode = ({ data, id, isConnectable }) => {
       {/* Delete button — edit mode only */}
       {data.isEditMode && (
         <button
-          onMouseDown={e => { e.stopPropagation(); data.onDelete?.(id) }}
-          className="absolute -top-2.5 -right-2.5 w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow z-10 transition-colors"
+          className="nodrag nopan absolute -top-2.5 -right-2.5 w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow z-50 transition-colors"
+          onPointerDown={e => e.stopPropagation()}
+          onClick={e => { e.stopPropagation(); data.onDelete?.(id) }}
           title="Delete node"
         >
           <X size={10} strokeWidth={3} />
