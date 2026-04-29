@@ -16,6 +16,23 @@ create policy "flowcharts_public_write"
   on public.chapter_flowcharts
   for all using (true) with check (true);
 
+-- ── Chapter content overrides (inline editing) ───────────────────────────────
+create table if not exists public.chapter_content (
+  chapter_id  integer primary key,
+  data        jsonb not null default '{}',
+  updated_at  timestamptz not null default now()
+);
+
+alter table public.chapter_content enable row level security;
+
+create policy "chapter_content_public_read"
+  on public.chapter_content
+  for select using (true);
+
+create policy "chapter_content_public_write"
+  on public.chapter_content
+  for all using (true) with check (true);
+
 -- ── Notes ────────────────────────────────────────────────────────────────────
 create table if not exists public.chapter_notes (
   id uuid primary key default gen_random_uuid(),

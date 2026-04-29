@@ -11,13 +11,12 @@ import {
   useNodesState,
 } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
-import { Lock, Plus, Save, Unlock, X } from 'lucide-react'
+import { Plus, Save } from 'lucide-react'
 import FlowNode from './FlowNode'
 import { isSupabaseConfigured, supabase } from '../lib/supabaseClient'
+import { useEditMode } from '../context/EditModeContext'
 
 const nodeTypes = { flowNode: FlowNode }
-
-const EDIT_PASSWORD = import.meta.env.VITE_EDIT_PASSWORD || ''
 
 const edgeDefaults = {
   animated: true,
@@ -54,13 +53,10 @@ const ChapterFlowchart = ({ chapter }) => {
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
 
-  const [loading, setLoading]         = useState(true)
-  const [saving, setSaving]           = useState(false)
-  const [editMode, setEditMode]       = useState(false)
-  const [showPwModal, setShowPwModal] = useState(false)
-  const [pw, setPw]                   = useState('')
-  const [pwError, setPwError]         = useState('')
+  const [loading, setLoading] = useState(true)
+  const [saving, setSaving]   = useState(false)
 
+  const { isEditMode: editMode } = useEditMode()
   const nodeCounter = useRef(200)
 
   /* ── Load ─────────────────────────────────────────────────── */
@@ -135,18 +131,6 @@ const ChapterFlowchart = ({ chapter }) => {
     ])
   }
 
-  /* ── Password unlock ──────────────────────────────────────── */
-  const handleUnlock = () => {
-    if (!EDIT_PASSWORD) {
-      setEditMode(true); setShowPwModal(false); return
-    }
-    if (pw === EDIT_PASSWORD) {
-      setEditMode(true); setShowPwModal(false); setPw(''); setPwError('')
-    } else {
-      setPwError('Incorrect password. Try again.')
-    }
-  }
-
   /* ── Save ─────────────────────────────────────────────────── */
   const save = async () => {
     setSaving(true)
@@ -185,38 +169,23 @@ const ChapterFlowchart = ({ chapter }) => {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 flex-shrink-0">
-          {editMode ? (
-            <>
-              <button
-                onClick={addNode}
-                className="flex items-center gap-1.5 px-3 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm rounded-xl font-medium transition-colors shadow-sm"
-              >
-                <Plus size={15} /> Add Node
-              </button>
-              <button
-                onClick={save}
-                disabled={saving}
-                className="flex items-center gap-1.5 px-3 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm rounded-xl font-medium transition-colors shadow-sm disabled:opacity-60"
-              >
-                <Save size={15} /> {saving ? 'Saving…' : 'Save'}
-              </button>
-              <button
-                onClick={() => setEditMode(false)}
-                className="flex items-center gap-1.5 px-3 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 text-sm rounded-xl font-medium transition-colors"
-              >
-                <Lock size={15} /> Lock
-              </button>
-            </>
-          ) : (
+        {editMode && (
+          <div className="flex items-center gap-2 flex-shrink-0">
             <button
-              onClick={() => setShowPwModal(true)}
-              className="flex items-center gap-1.5 px-3 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 text-sm rounded-xl font-medium transition-colors"
+              onClick={addNode}
+              className="flex items-center gap-1.5 px-3 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm rounded-xl font-medium transition-colors shadow-sm"
             >
-              <Unlock size={15} /> Edit
+              <Plus size={15} /> Add Node
             </button>
-          )}
-        </div>
+            <button
+              onClick={save}
+              disabled={saving}
+              className="flex items-center gap-1.5 px-3 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm rounded-xl font-medium transition-colors shadow-sm disabled:opacity-60"
+            >
+              <Save size={15} /> {saving ? 'Saving…' : 'Save'}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Canvas */}
@@ -252,43 +221,6 @@ const ChapterFlowchart = ({ chapter }) => {
         )}
       </div>
 
-      {/* Password modal */}
-      {showPwModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl w-full max-w-sm border border-gray-200 dark:border-gray-700">
-            <div className="flex items-center justify-between mb-5">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                <Unlock size={18} className="text-orange-500" /> Unlock Editing
-              </h3>
-              <button
-                onClick={() => { setShowPwModal(false); setPw(''); setPwError('') }}
-                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
-              >
-                <X size={20} />
-              </button>
-            </div>
-
-            <input
-              type="password"
-              value={pw}
-              onChange={e => { setPw(e.target.value); setPwError('') }}
-              onKeyDown={e => e.key === 'Enter' && handleUnlock()}
-              placeholder="Enter edit password…"
-              autoFocus
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white outline-none focus:border-orange-500 dark:focus:border-orange-400 transition-colors mb-2 text-sm"
-            />
-            {pwError && (
-              <p className="text-sm text-red-500 mb-3">{pwError}</p>
-            )}
-            <button
-              onClick={handleUnlock}
-              className="w-full py-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white rounded-xl font-semibold transition-all shadow-md mt-1"
-            >
-              Unlock
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

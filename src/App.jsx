@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
+import { EditModeProvider } from './context/EditModeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ChaptersOverview from './components/ChaptersOverview'
@@ -40,6 +41,7 @@ function App() {
   }
 
   return (
+    <EditModeProvider>
     <div className={darkMode ? 'dark' : ''}>
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
         <Navbar
@@ -76,6 +78,7 @@ function App() {
         <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
       </Suspense>
     </div>
+    </EditModeProvider>
   )
 }
 
