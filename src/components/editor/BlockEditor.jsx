@@ -426,11 +426,10 @@ const BlockItem = ({ block, index, total, onUpdate, onDelete, onMoveUp, onMoveDo
       <div className={`rounded-lg transition-all ${editing ? 'ring-2 ring-orange-400 bg-orange-50/30 dark:bg-orange-900/10' : 'ring-1 ring-dashed ring-orange-200 dark:ring-orange-700 hover:ring-orange-400'}`}>
         <div className={editing ? 'p-3' : 'px-1 py-0.5'}>
           {editing && Editor ? (
-            <div className="mb-3">
-              <Editor block={block} onChange={onUpdate} />
-            </div>
-          ) : null}
-          <Renderer block={block} />
+            <Editor block={block} onChange={onUpdate} />
+          ) : (
+            <Renderer block={block} />
+          )}
         </div>
       </div>
     </div>

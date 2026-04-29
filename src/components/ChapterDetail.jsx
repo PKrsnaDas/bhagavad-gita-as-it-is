@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowLeft, Book, CheckCircle, ChevronDown, ChevronRight, Plus, Sparkles, Trash2 } from 'lucide-react'
-import { Fragment, lazy, Suspense, useState } from 'react'
+import { ArrowLeft, Book, CheckCircle, ChevronDown, ChevronRight, Plus, Redo2, Save, Sparkles, Trash2, Undo2 } from 'lucide-react'
+import { Fragment, lazy, Suspense, useEffect, useState } from 'react'
 import { useEditMode } from '../context/EditModeContext'
 import { useChapterContent } from '../hooks/useChapterContent'
 import InlineEdit from './InlineEdit'
@@ -12,7 +12,18 @@ const ChapterFlowchart = lazy(() => import('./ChapterFlowchart'))
 const ChapterDetail = ({ chapter, onBack, user }) => {
   const [expandedSections, setExpandedSections] = useState({})
   const { isEditMode } = useEditMode()
-  const { content, updateField } = useChapterContent(chapter)
+  const { content, updateField, undo, redo, canUndo, canRedo, saveStatus } = useChapterContent(chapter)
+
+  /* Ctrl+Z / Ctrl+Y keyboard shortcuts */
+  useEffect(() => {
+    if (!isEditMode) return
+    const handler = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) { e.preventDefault(); undo() }
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) { e.preventDefault(); redo() }
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [isEditMode, undo, redo])
 
   const acronymColors = [
     'text-red-500 dark:text-red-400',
@@ -71,10 +82,27 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
     <section className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
 
-        {/* Edit mode banner */}
+        {/* Edit mode toolbar */}
         {isEditMode && (
-          <div className="mb-4 px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300 text-sm font-medium flex items-center gap-2">
-            ✏️ Edit mode is ON — click any text to edit it. Changes save automatically.
+          <div className="mb-4 px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300 text-sm font-medium flex items-center gap-3 flex-wrap">
+            <span>✏️ Edit mode — click any text to edit. <kbd className="px-1 py-0.5 bg-white dark:bg-gray-700 rounded text-xs border border-emerald-300 dark:border-gray-600">⌘Z</kbd> undo &nbsp;<kbd className="px-1 py-0.5 bg-white dark:bg-gray-700 rounded text-xs border border-emerald-300 dark:border-gray-600">⌘Y</kbd> redo.</span>
+            <div className="flex items-center gap-2 ml-auto">
+              <button onClick={undo} disabled={!canUndo} title="Undo (Ctrl+Z)" className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white dark:bg-gray-700 border border-emerald-300 dark:border-gray-600 text-emerald-700 dark:text-emerald-300 disabled:opacity-30 hover:bg-emerald-50 dark:hover:bg-gray-600 transition-colors text-xs">
+                <Undo2 size={13} /> Undo
+              </button>
+              <button onClick={redo} disabled={!canRedo} title="Redo (Ctrl+Y)" className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white dark:bg-gray-700 border border-emerald-300 dark:border-gray-600 text-emerald-700 dark:text-emerald-300 disabled:opacity-30 hover:bg-emerald-50 dark:hover:bg-gray-600 transition-colors text-xs">
+                <Redo2 size={13} /> Redo
+              </button>
+              {saveStatus && (
+                <span className={`flex items-center gap-1 text-xs px-2 py-1 rounded-lg border ${
+                  saveStatus === 'saving'
+                    ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300'
+                    : 'bg-emerald-100 dark:bg-emerald-900/50 border-emerald-300 dark:border-emerald-600 text-emerald-700 dark:text-emerald-300'
+                }`}>
+                  <Save size={12} /> {saveStatus === 'saving' ? 'Saving…' : '✓ Saved'}
+                </span>
+              )}
+            </div>
           </div>
         )}
 
