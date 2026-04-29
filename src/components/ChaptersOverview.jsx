@@ -1,10 +1,35 @@
 import { motion } from 'framer-motion'
 import { chaptersData } from '../data/chaptersData'
-import { Search, Book, Image as ImageIcon } from 'lucide-react'
-import { useState } from 'react'
+import { Search, Book, Image as ImageIcon, Plus } from 'lucide-react'
+import { lazy, Suspense, useEffect, useState } from 'react'
+import { useEditMode } from '../context/EditModeContext'
+import { isSupabaseConfigured, supabase } from '../lib/supabaseClient'
+
+const AddChapterModal = lazy(() => import('./editor/AddChapterModal'))
 
 const ChaptersOverview = ({ onSelectChapter }) => {
   const [searchTerm, setSearchTerm] = useState('')
+  const [customChapters, setCustomChapters] = useState([])
+  const [showAddModal, setShowAddModal] = useState(false)
+  const { isEditMode } = useEditMode()
+
+  useEffect(() => {
+    const load = async () => {
+      if (isSupabaseConfigured && supabase) {
+        const { data } = await supabase.from('custom_chapters').select('*').order('created_at')
+        if (data) {
+          setCustomChapters(data.map(d => ({
+            ...d, id: `custom-${d.id}`, dbId: d.id, custom: true,
+            imageUrl: null, verses: 0, keyTeachings: [], acronymSections: [],
+          })))
+          return
+        }
+      }
+      const raw = localStorage.getItem('custom_chapters')
+      if (raw) setCustomChapters(JSON.parse(raw))
+    }
+    load()
+  }, [])
   const acronymColors = [
     'text-red-500 dark:text-red-400',
     'text-amber-500 dark:text-amber-400',
@@ -29,10 +54,11 @@ const ChaptersOverview = ({ onSelectChapter }) => {
     )
   }
 
-  const filteredChapters = chaptersData.filter(chapter =>
+  const allChapters = [...chaptersData, ...customChapters]
+  const filteredChapters = allChapters.filter(chapter =>
     chapter.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    chapter.english.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    chapter.theme.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (chapter.english || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (chapter.theme || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
     chapter.acronym?.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
@@ -123,9 +149,34 @@ const ChaptersOverview = ({ onSelectChapter }) => {
                 </div>
               </motion.div>
             ))}
+
+            {/* + New Chapter card — edit mode only */}
+            {isEditMode && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                onClick={() => setShowAddModal(true)}
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 border-dashed border-orange-300 dark:border-orange-700 hover:border-orange-500 group flex flex-col items-center justify-center min-h-[200px] p-8"
+              >
+                <div className="p-4 rounded-full bg-orange-100 dark:bg-orange-900/30 mb-3 group-hover:scale-110 transition-transform">
+                  <Plus className="text-orange-500" size={28} />
+                </div>
+                <p className="text-lg font-semibold text-orange-600 dark:text-orange-400">New Chapter</p>
+                <p className="text-sm text-gray-400 dark:text-gray-500 mt-1 text-center">Create a custom chapter with full content editing</p>
+              </motion.div>
+            )}
           </div>
         </motion.div>
       </div>
+
+      {showAddModal && (
+        <Suspense fallback={null}>
+          <AddChapterModal
+            onClose={() => setShowAddModal(false)}
+            onCreated={(ch) => setCustomChapters(prev => [...prev, ch])}
+          />
+        </Suspense>
+      )}
     </section>
   )
 }

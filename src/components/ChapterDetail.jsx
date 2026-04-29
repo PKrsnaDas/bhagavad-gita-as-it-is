@@ -5,6 +5,7 @@ import { useEditMode } from '../context/EditModeContext'
 import { useChapterContent } from '../hooks/useChapterContent'
 import InlineEdit from './InlineEdit'
 import ChapterNotes from './ChapterNotes'
+import BlockEditor from './editor/BlockEditor'
 
 const ChapterFlowchart = lazy(() => import('./ChapterFlowchart'))
 
@@ -58,6 +59,10 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
   /* ── Acronym section helpers ───────────────────────────────── */
   const updateSection = (i, field, val) => {
     const arr = (content.acronymSections || []).map((s, j) => j === i ? { ...s, [field]: val } : s)
+    updateField('acronymSections', arr)
+  }
+  const updateSectionBlocks = (i, blocks) => {
+    const arr = (content.acronymSections || []).map((s, j) => j === i ? { ...s, blocks } : s)
     updateField('acronymSections', arr)
   }
 
@@ -147,9 +152,10 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
             {/* Summary */}
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Summary</h2>
-              <div className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              <div className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                 <InlineEdit value={content.summary} onSave={v => updateField('summary', v)} multiline />
               </div>
+              <BlockEditor blocks={content.blocks || []} onChange={b => updateField('blocks', b)} placeholder="Add images, charts, videos, tables or any content here…" />
             </div>
 
             {/* Acronym Section */}
@@ -218,7 +224,7 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
                             />
                           </div>
                           {section.subsections && section.subsections.length > 0 && (
-                            <div className="space-y-2">
+                            <div className="space-y-2 mb-4">
                               {section.subsections.map((subsection, subIndex) => (
                                 <div key={subIndex} className="border-l-2 border-orange-300 dark:border-orange-700 pl-4 text-gray-700 dark:text-gray-300 font-medium text-sm">
                                   {subsection}
@@ -226,6 +232,7 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
                               ))}
                             </div>
                           )}
+                          <BlockEditor blocks={section.blocks || []} onChange={b => updateSectionBlocks(index, b)} placeholder="Add content inside this acronym section…" />
                         </motion.div>
                       )}
                     </motion.div>
@@ -328,6 +335,9 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
                   <Plus size={16} /> Add Teaching
                 </button>
               )}
+              <div className="mt-6">
+                <BlockEditor blocks={content.teachingBlocks || []} onChange={b => updateField('teachingBlocks', b)} placeholder="Add extra content after key teachings…" />
+              </div>
             </div>
 
             {/* Flowchart */}

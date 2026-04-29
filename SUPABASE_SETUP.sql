@@ -16,6 +16,26 @@ create policy "flowcharts_public_write"
   on public.chapter_flowcharts
   for all using (true) with check (true);
 
+-- ── Custom chapters (user-created) ──────────────────────────────────────────
+create table if not exists public.custom_chapters (
+  id          uuid primary key default gen_random_uuid(),
+  name        text not null,
+  sanskrit    text default '',
+  english     text default '',
+  theme       text default '',
+  summary     text default '',
+  created_at  timestamptz not null default now(),
+  updated_at  timestamptz not null default now()
+);
+
+alter table public.custom_chapters enable row level security;
+
+create policy "custom_chapters_public_read"
+  on public.custom_chapters for select using (true);
+
+create policy "custom_chapters_public_write"
+  on public.custom_chapters for all using (true) with check (true);
+
 -- ── Chapter content overrides (inline editing) ───────────────────────────────
 create table if not exists public.chapter_content (
   chapter_id  integer primary key,
