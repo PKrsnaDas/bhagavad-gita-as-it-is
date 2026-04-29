@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { chaptersData } from '../data/chaptersData'
-import { Search, Book, Image as ImageIcon, Plus } from 'lucide-react'
+import { Search, Book, Plus, Trash2 } from 'lucide-react'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { useEditMode } from '../context/EditModeContext'
 import { isSupabaseConfigured, supabase } from '../lib/supabaseClient'
@@ -54,6 +54,28 @@ const ChaptersOverview = ({ onSelectChapter }) => {
     )
   }
 
+  /* ── Delete custom chapter ───────────────────────────────── */
+  const deleteCustomChapter = async (e, chapter) => {
+    e.stopPropagation()
+    if (!window.confirm(`Delete "${chapter.name}"? This cannot be undone.`)) return
+
+    if (isSupabaseConfigured && supabase && chapter.dbId) {
+      await supabase.from('custom_chapters').delete().eq('id', chapter.dbId)
+      // clean up related tables
+      await supabase.from('chapter_content').delete().eq('chapter_id', chapter.dbId).catch(() => {})
+      await supabase.from('chapter_flowcharts').delete().eq('chapter_id', chapter.dbId).catch(() => {})
+    }
+    // always clean localStorage
+    const stored = JSON.parse(localStorage.getItem('custom_chapters') || '[]')
+    localStorage.setItem('custom_chapters', JSON.stringify(stored.filter(c => c.id !== chapter.id)))
+    localStorage.removeItem(`chapter-content-${chapter.id}`)
+    localStorage.removeItem(`flowchart-ch-${chapter.id}`)
+
+    setCustomChapters(prev => prev.filter(c => c.id !== chapter.id))
+  }
+
+  const isCustom = (chapter) => String(chapter.id).startsWith('custom-')
+
   const allChapters = [...chaptersData, ...customChapters]
   const filteredChapters = allChapters.filter(chapter =>
     chapter.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -100,8 +122,18 @@ const ChaptersOverview = ({ onSelectChapter }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 onClick={() => onSelectChapter(chapter)}
-                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-orange-400 dark:hover:border-orange-500 group"
+                className="relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-orange-400 dark:hover:border-orange-500 group"
               >
+                {/* Delete button — custom chapters in edit mode only */}
+                {isEditMode && isCustom(chapter) && (
+                  <button
+                    onClick={(e) => deleteCustomChapter(e, chapter)}
+                    title="Delete this chapter"
+                    className="absolute top-2 right-2 z-10 w-7 h-7 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow transition-colors"
+                  >
+                    <Trash2 size={13} />
+                  </button>
+                )}
                 {chapter.imageUrl && (
                   <div className="h-40 overflow-hidden">
                     <img

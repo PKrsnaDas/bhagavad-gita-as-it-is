@@ -11,8 +11,17 @@ const ChapterFlowchart = lazy(() => import('./ChapterFlowchart'))
 
 const ChapterDetail = ({ chapter, onBack, user }) => {
   const [expandedSections, setExpandedSections] = useState({})
+  const [actionFeedback, setActionFeedback] = useState('')   // 'Undone' | 'Redone' | ''
   const { isEditMode } = useEditMode()
   const { content, updateField, undo, redo, canUndo, canRedo, saveStatus } = useChapterContent(chapter)
+
+  const flash = (msg) => {
+    setActionFeedback(msg)
+    setTimeout(() => setActionFeedback(''), 1500)
+  }
+
+  const handleUndo = () => { if (canUndo) { undo(); flash('Undone') } }
+  const handleRedo = () => { if (canRedo) { redo(); flash('Redone') } }
 
   /* Ctrl+Z / Ctrl+Y keyboard shortcuts — skip when a text input is focused */
   useEffect(() => {
@@ -20,12 +29,13 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
     const handler = (e) => {
       const tag = (e.target?.tagName || '').toLowerCase()
       if (tag === 'input' || tag === 'textarea') return   // let browser handle native undo
-      if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) { e.preventDefault(); undo() }
-      if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) { e.preventDefault(); redo() }
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) { e.preventDefault(); handleUndo() }
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) { e.preventDefault(); handleRedo() }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [isEditMode, undo, redo])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isEditMode, canUndo, canRedo, undo, redo])
 
   const acronymColors = [
     'text-red-500 dark:text-red-400',
@@ -89,13 +99,30 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
           <div className="mb-4 px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300 text-sm font-medium flex items-center gap-3 flex-wrap">
             <span>✏️ Edit mode — click any text to edit. <kbd className="px-1 py-0.5 bg-white dark:bg-gray-700 rounded text-xs border border-emerald-300 dark:border-gray-600">⌘Z</kbd> undo &nbsp;<kbd className="px-1 py-0.5 bg-white dark:bg-gray-700 rounded text-xs border border-emerald-300 dark:border-gray-600">⌘Y</kbd> redo.</span>
             <div className="flex items-center gap-2 ml-auto">
-              <button onClick={undo} disabled={!canUndo} title="Undo (Ctrl+Z)" className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white dark:bg-gray-700 border border-emerald-300 dark:border-gray-600 text-emerald-700 dark:text-emerald-300 disabled:opacity-30 hover:bg-emerald-50 dark:hover:bg-gray-600 transition-colors text-xs">
+              <button
+                onClick={handleUndo} disabled={!canUndo} title="Undo (⌘Z / Ctrl+Z)"
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-lg border text-xs font-medium transition-all ${
+                  canUndo
+                    ? 'bg-orange-100 dark:bg-orange-900/40 border-orange-400 text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-900/60 shadow-sm'
+                    : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-400 dark:text-gray-500 opacity-50 cursor-not-allowed'
+                }`}>
                 <Undo2 size={13} /> Undo
               </button>
-              <button onClick={redo} disabled={!canRedo} title="Redo (Ctrl+Y)" className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white dark:bg-gray-700 border border-emerald-300 dark:border-gray-600 text-emerald-700 dark:text-emerald-300 disabled:opacity-30 hover:bg-emerald-50 dark:hover:bg-gray-600 transition-colors text-xs">
+              <button
+                onClick={handleRedo} disabled={!canRedo} title="Redo (⌘Y / Ctrl+Y)"
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-lg border text-xs font-medium transition-all ${
+                  canRedo
+                    ? 'bg-orange-100 dark:bg-orange-900/40 border-orange-400 text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-900/60 shadow-sm'
+                    : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-400 dark:text-gray-500 opacity-50 cursor-not-allowed'
+                }`}>
                 <Redo2 size={13} /> Redo
               </button>
-              {saveStatus && (
+              {actionFeedback && (
+                <span className="flex items-center gap-1 text-xs px-2 py-1.5 rounded-lg bg-orange-500 text-white font-semibold animate-pulse">
+                  {actionFeedback === 'Undone' ? <Undo2 size={11}/> : <Redo2 size={11}/>} {actionFeedback}
+                </span>
+              )}
+              {saveStatus && !actionFeedback && (
                 <span className={`flex items-center gap-1 text-xs px-2 py-1 rounded-lg border ${
                   saveStatus === 'saving'
                     ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300'
