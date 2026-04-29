@@ -48,13 +48,14 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
   })
 
   /* ── Key teachings helpers ─────────────────────────────────── */
+  const teachings = content.keyTeachings || []
   const updateTeaching = (i, val) => {
-    const arr = [...content.keyTeachings]
+    const arr = [...teachings]
     arr[i] = val
     updateField('keyTeachings', arr)
   }
-  const deleteTeaching = (i) => updateField('keyTeachings', content.keyTeachings.filter((_, j) => j !== i))
-  const addTeaching = () => updateField('keyTeachings', [...content.keyTeachings, 'New teaching'])
+  const deleteTeaching = (i) => updateField('keyTeachings', teachings.filter((_, j) => j !== i))
+  const addTeaching = () => updateField('keyTeachings', [...teachings, 'New teaching'])
 
   /* ── Acronym section helpers ───────────────────────────────── */
   const updateSection = (i, field, val) => {
@@ -303,7 +304,7 @@ const ChapterDetail = ({ chapter, onBack, user }) => {
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Key Teachings</h2>
               <ul className="space-y-3">
-                {content.keyTeachings.map((teaching, index) => (
+                {teachings.map((teaching, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}

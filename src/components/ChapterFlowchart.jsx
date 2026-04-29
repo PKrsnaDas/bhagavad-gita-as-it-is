@@ -49,6 +49,8 @@ const buildDefaultEdges = (chapter) => {
 
 const storageKey = (id) => `flowchart-ch-${id}`
 
+const isNumericId = (id) => typeof id === 'number' || (typeof id === 'string' && /^\d+$/.test(String(id)))
+
 const ChapterFlowchart = ({ chapter }) => {
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
@@ -58,6 +60,7 @@ const ChapterFlowchart = ({ chapter }) => {
 
   const { isEditMode: editMode } = useEditMode()
   const nodeCounter = useRef(200)
+  const useSupabase = isSupabaseConfigured && supabase && isNumericId(chapter.id)
 
   /* ── Load ─────────────────────────────────────────────────── */
   useEffect(() => {
@@ -65,11 +68,11 @@ const ChapterFlowchart = ({ chapter }) => {
     const load = async () => {
       setLoading(true)
       try {
-        if (isSupabaseConfigured && supabase) {
+        if (useSupabase) {
           const { data, error } = await supabase
             .from('chapter_flowcharts')
             .select('nodes, edges')
-            .eq('chapter_id', chapter.id)
+            .eq('chapter_id', Number(chapter.id))
             .maybeSingle()
 
           if (!cancelled && data && !error && data.nodes?.length) {
@@ -144,9 +147,9 @@ const ChapterFlowchart = ({ chapter }) => {
     localStorage.setItem(storageKey(chapter.id), JSON.stringify({ nodes: cleanNodes, edges: cleanEdges }))
 
     try {
-      if (isSupabaseConfigured && supabase) {
+      if (useSupabase) {
         await supabase.from('chapter_flowcharts').upsert(
-          { chapter_id: chapter.id, nodes: cleanNodes, edges: cleanEdges, updated_at: new Date().toISOString() },
+          { chapter_id: Number(chapter.id), nodes: cleanNodes, edges: cleanEdges, updated_at: new Date().toISOString() },
           { onConflict: 'chapter_id' }
         )
       }
